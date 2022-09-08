@@ -1,65 +1,101 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-
-
-body{
-    
+body {
     position: relative;
-        width: 428px;
-        height: 926px;
-            background: linear-gradient(180deg, #051427 52.6%, #5115FB 99.48%);
-        margin: auto;
+    width: 428px;
+    height: 926px;
+    background: linear-gradient(180deg, #051427 52.6%, #5115FB 99.48%);
+    margin: auto;
 }
-/*div{
-    display:flex;
-    flex-direction: column;
-   
-}*/
- 
 #logIn {
     position: absolute;
     width: 204px;
     height: 53px;
-    margin: 5em;
-    justify-content: ;
+    margin: 4em;
+    justify-content: space-around;
     top: 450px;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
     color: #F1EF14;
-    font-size: 20px;
+    font-family: 'Charmonman', cursive;
+    font-size: 25px;
 }
-
 #register {
     position: absolute;
     width: 204px;
     height: 53px;
-    margin: 5em;
+    margin: 4em;
     justify-content: space-around;
-    top: 600px;
+    top: 630px;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
     color: #F1EF14;
-    font-size: 20px;
+    font-family: 'Charmonman', cursive;
+    font-size: 25px;
 }
-
 #logo {
-top: 400px;
-position: absolute;
-width: 385.43px;
-height: 396.76px;
-left: 21px;
-top: 0px;
-padding-top: 50px;
+    top: 400px;
+    position: absolute;
+    width: 385.43px;
+    height: 396.76px;
+    left: 21px;
+    top: 0px;
+    padding-top: 50px;
 }
-
 #or {
     position: absolute;
     color: #F1EF14;
     top: 650px;
     margin-left: 190px;
+    font-family: 'Charmonman', cursive;
     font-size: 20px;
+}
+#inputUsername{
+    position: absolute;
+width: 204px;
+height: 42px;
+left: 113px;
+top: 480px;
+background: #F1EF14;
+}
+#inputPassword { 
+    position: absolute;
+    width: 204px;
+    height: 42px;
+    left: 113px;
+    top: 559px;
+    
+    background: #F1EF14;
+}
+#logIn2 {
+    position: absolute;
+    width: 204px;
+    height: 53px;
+    margin: 4.5em;
+    justify-content: space-around;
+    top: 550px;
+    background: rgba(254, 102, 196, 0.69);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    color: #F1EF14;
+    font-family: 'Charmonman', cursive;
+    font-size: 25px;
+}
+#buttonBack {
+    position: absolute;
+    width: 204px;
+    height: 53px;
+    margin: 4.5em;
+    justify-content: space-around;
+    top: 630px;
+    background: rgba(254, 102, 196, 0.69);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    color: #F1EF14;
+    font-family: 'Charmonman', cursive;
+    font-size: 25px;
 }
