@@ -1,28 +1,29 @@
 import { onNavigate } from "../main.js";
 
-export const login = () => {
+export const register = () => {
     const div = document.createElement('div');
   
     const logoInicio = document.createElement('img');
     logoInicio.id = 'logo';
-  
-    const inputUsername = document.createElement('input');
-    inputUsername.id = 'inputUsername';
-  
-    const inputPassword = document.createElement('input');
-    inputPassword.id = 'inputPassword';
+    
   
     const buttonLoginOne = document.createElement('button');
     buttonLoginOne.id = 'logIn2';
   
     const buttonBack = document.createElement('button');
     buttonBack.id = 'buttonBack';
+
+    const inputEmail = document.createElement('input');
+    inputEmail.id = 'inputUsername';
+
+    const inputPassword = document.createElement('input');
+    inputPassword.id = 'inputPassword';
   
     logoInicio.src = './images/logo5.png';
-    buttonLoginOne.textContent = 'Log In';
+    buttonLoginOne.textContent = 'Create acount';
     buttonBack.textContent = 'Back';
-    inputUsername.placeholder = 'Username';
-    inputPassword.placeholder = 'Password';
+    inputEmail.placeholder = 'Email';
+    inputPassword.placeholder = 'Pasword'
 
 
     buttonLoginOne.addEventListener('click', () => {
@@ -32,7 +33,7 @@ export const login = () => {
         onNavigate('/');
       });
 
-    div.append(logoInicio, inputUsername, inputPassword, buttonLoginOne, buttonBack);
+    div.append(logoInicio, inputEmail, inputPassword, buttonLoginOne, buttonBack);
   
     return div;
   };
