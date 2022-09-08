@@ -1,16 +1,21 @@
 import { welcome } from './components/welcome.js';
+import { logIn } from './components/login.js';
+
 const root = document.getElementById('root');
 const routes = {
-    '/': welcome,
+  '/': welcome,
+  '/login': logIn,
 };
 
-const onNavigate = (pathname) => {
-    window.history.pushState(
+export const onNavigate = (pathname) => {
+  window.history.pushState(
     {},
     pathname,
-    window.location.origin + pathname
-    );
-    root.appendChild(routes[pathname]());
+    window.location.origin + pathname,
+  );
+
+  root.removeChild(root.firstChild);
+  root.appendChild(routes[pathname]());
 };
 
 const component = routes[window.location.pathname];
