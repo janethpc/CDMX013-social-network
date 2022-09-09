@@ -6,6 +6,8 @@ export const register = () => {
     const logoInicio = document.createElement('img');
     logoInicio.id = 'logo';
     
+    const logoGoogle = document.createElement('img');
+    logoGoogle.id = 'logoGoogle';
   
     const buttonLoginOne = document.createElement('button');
     buttonLoginOne.id = 'logIn2';
@@ -24,7 +26,7 @@ export const register = () => {
     buttonBack.textContent = 'Back';
     inputEmail.placeholder = 'Email';
     inputPassword.placeholder = 'Pasword'
-
+    logoGoogle.src = './images/btn_google.png'
 
     buttonLoginOne.addEventListener('click', () => {
         onNavigate('/');
@@ -33,7 +35,7 @@ export const register = () => {
         onNavigate('/');
       });
 
-    div.append(logoInicio, inputEmail, inputPassword, buttonLoginOne, buttonBack);
+    div.append(logoInicio, inputEmail, inputPassword, buttonLoginOne, buttonBack, logoGoogle);
   
     return div;
   };
