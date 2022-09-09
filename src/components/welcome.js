@@ -1,4 +1,5 @@
-import { onNavigate } from '../main';
+import { onNavigate } from "../main.js";
+
 
 export const welcome = () => {
   const div = document.createElement('div');
@@ -23,6 +24,9 @@ export const welcome = () => {
   buttonLogin.addEventListener('click', () => {
     onNavigate('/login');
   });
+  buttonRegister.addEventListener('click', () => {
+  onNavigate('/register');
+});
   div.append(logoInicio, optionOr, buttonLogin, buttonRegister);
 
   return div;
