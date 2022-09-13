@@ -1,7 +1,7 @@
 import { welcome } from './components/welcome.js';
 import { login } from './components/login.js';
 import { register } from './components/register.js';
-
+import {app} from './lib/config.js'
 const root = document.getElementById('root');
 
 const routes = {
@@ -26,5 +26,7 @@ window.onpopstate = () => {
   root.removeChild(root.firstChild);
   root.append(component());
 };
+
+console.log(app);
 
 root.appendChild(component());

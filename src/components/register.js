@@ -1,28 +1,21 @@
 import { onNavigate } from '../main.js';
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyC2examG0LregGs2C9N9FGt4a7SFb420u4",
-  authDomain: "party-girls-2022.firebaseapp.com",
-  projectId: "party-girls-2022",
-  storageBucket: "party-girls-2022.appspot.com",
-  messagingSenderId: "553450782361",
-  appId: "1:553450782361:web:a60f6128e6d42e5a5d4208",
-  measurementId: "G-LKR9GJXQYC"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
+import { registerUser } from '../lib/auth.js';
 
 export const register = () => {
+
+  registerUser('carlos@carlos.com', '123456').then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    console.log('ya esta');
+    // ...
+  })
+  .catch((error) => {
+    console.log('nel carnal no te pueder registrar');
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+
   const div = document.createElement('div');
 
   const logoInicio = document.createElement('img');
