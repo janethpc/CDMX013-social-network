@@ -44,8 +44,8 @@ body {
 #logo {
     top: 0px;
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 18rem;
+    height: 18rem;
     align-items: center;
     left: 4rem;
 }
