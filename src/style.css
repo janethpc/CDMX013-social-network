@@ -44,9 +44,10 @@ body {
 #logo {
     top: 0px;
     position: absolute;
-    width: 385.43px;
-    height: 396.76px;
-    left: 21px;
+    width: 18rem;
+    height: 18rem;
+    align-items: center;
+    left: 4rem;
 }
 
 #or {
