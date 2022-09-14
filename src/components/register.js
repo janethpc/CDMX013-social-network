@@ -1,6 +1,26 @@
 import { onNavigate } from '../main.js';
+import { registerUser } from '../lib/auth.js';
 
 export const register = () => {
+
+  function registerUsuario() {
+    let valueEmail = document.getElementById('inputUsername').value;
+    let password = document.getElementById('inputPassword').value;
+  registerUser(valueEmail, password).then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    alert("usuario registrado correctamente")
+    console.log(user);
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+    alert('nel carnal no te pueder registrar');
+  });
+};
+
   const div = document.createElement('div');
 
   const logoInicio = document.createElement('img');
@@ -31,13 +51,13 @@ export const register = () => {
   buttonLoginOne.textContent = 'Create acount';
   buttonBack.textContent = 'Back';
   inputEmail.placeholder = 'Email';
-  inputPassword.placeholder = 'Pasword';
+  inputPassword.placeholder = 'Password';
   logoGoogle.src = './images/btn_google.png';
   logoTwitter.src = './images/btn_twitter.png';
   logogithub.src = './images/git.png';
 
   buttonLoginOne.addEventListener('click', () => {
-    onNavigate('/');
+    registerUsuario();
   });
   buttonBack.addEventListener('click', () => {
     onNavigate('/');
