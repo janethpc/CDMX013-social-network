@@ -3,18 +3,23 @@ import { registerUser } from '../lib/auth.js';
 
 export const register = () => {
 
-  registerUser('carlos@carlos.com', '123456').then((userCredential) => {
+  function registerUsuario() {
+    let valueEmail = document.getElementById('inputUsername').value;
+    let password = document.getElementById('inputPassword').value;
+  registerUser(valueEmail, password).then((userCredential) => {
     // Signed in
     const user = userCredential.user;
-    console.log('ya esta');
+    alert("usuario registrado correctamente")
+    console.log(user);
     // ...
   })
   .catch((error) => {
-    console.log('nel carnal no te pueder registrar');
     const errorCode = error.code;
     const errorMessage = error.message;
     // ..
+    alert('nel carnal no te pueder registrar');
   });
+};
 
   const div = document.createElement('div');
 
@@ -52,7 +57,7 @@ export const register = () => {
   logogithub.src = './images/git.png';
 
   buttonLoginOne.addEventListener('click', () => {
-    onNavigate('/');
+    registerUsuario();
   });
   buttonBack.addEventListener('click', () => {
     onNavigate('/');
