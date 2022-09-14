@@ -11,9 +11,19 @@ export const login = () => {
 
   const inputPassword = document.createElement('input');
   inputPassword.id = 'inputPassword';
+  inputPassword.setAttribute('type', 'password');
 
   const buttonLoginOne = document.createElement('button');
   buttonLoginOne.id = 'logIn2';
+
+  const logoGoogle = document.createElement('img');
+  logoGoogle.id = 'logoGoogle';
+
+  const logoTwitter = document.createElement('img');
+  logoTwitter.id = 'logoTwitter';
+
+  const logogithub = document.createElement('img');
+  logogithub.id = 'logogithub';
 
   const buttonBack = document.createElement('button');
   buttonBack.id = 'buttonBack';
@@ -23,6 +33,9 @@ export const login = () => {
   buttonBack.textContent = 'Back';
   inputUsername.placeholder = 'Username';
   inputPassword.placeholder = 'Password';
+  logoGoogle.src = './images/btn_google.png';
+  logoTwitter.src = './images/btn_twitter.png';
+  logogithub.src = './images/git.png';
 
   buttonLoginOne.addEventListener('click', () => {
     onNavigate('/');
@@ -31,7 +44,14 @@ export const login = () => {
     onNavigate('/');
   });
 
-  div.append(logoInicio, inputUsername, inputPassword, buttonLoginOne, buttonBack);
+  div.append(logoInicio,
+    inputUsername,
+    inputPassword,
+    buttonLoginOne,
+    buttonBack,
+    logoGoogle,
+    logoTwitter,
+    logogithub);
 
   return div;
 };
