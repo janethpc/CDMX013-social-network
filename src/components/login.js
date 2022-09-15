@@ -42,7 +42,7 @@ export const login = () => {
   optionSignAs.textContent = 'Or Sign As ..';
 
   buttonLoginOne.addEventListener('click', () => {
-    onNavigate('/');
+    onNavigate('/home');
   });
   buttonBack.addEventListener('click', () => {
     onNavigate('/');
