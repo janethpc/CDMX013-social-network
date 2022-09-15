@@ -13,6 +13,9 @@ export const login = () => {
   inputPassword.id = 'inputPassword';
   inputPassword.setAttribute('type', 'password');
 
+  const optionSignAs = document.createElement('h');
+  optionSignAs.id = 'SignAs';
+
   const buttonLoginOne = document.createElement('button');
   buttonLoginOne.id = 'logIn2';
 
@@ -36,6 +39,7 @@ export const login = () => {
   logoGoogle.src = './images/btn_google.png';
   logoTwitter.src = './images/btn_twitter.png';
   logogithub.src = './images/git.png';
+  optionSignAs.textContent = 'Or Sign As ..';
 
   buttonLoginOne.addEventListener('click', () => {
     onNavigate('/');
@@ -51,7 +55,8 @@ export const login = () => {
     buttonBack,
     logoGoogle,
     logoTwitter,
-    logogithub);
+    logogithub,
+    optionSignAs);
 
   return div;
 };
