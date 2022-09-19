@@ -1,6 +1,9 @@
 import { onNavigate } from '../main.js';
+import { observador } from '../lib/auth.js';
 
 export const home = () => {
+
+  console.log(observador);
 
   const div = document.createElement('div');
 
