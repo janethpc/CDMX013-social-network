@@ -1,6 +1,26 @@
 import { onNavigate } from '../main.js';
+import { loginUser } from '../lib/auth.js';
 
 export const login = () => {
+  function enterHome() {
+    const valueEmailLogin = document.getElementById('inputUsername').value
+    const valuePassword = document.getElementById('inputPassword').value 
+    loginUser(valueEmailLogin, valuePassword).then((userCredential) => {
+      // Signed in
+        const user = userCredential.user;
+        onNavigate('/home');
+        console.log(user);
+      // ...
+      })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+          alert('Contraseña erronea');
+        });
+
+
+  }
   const div = document.createElement('div');
 
   const logoInicio = document.createElement('img');
@@ -42,7 +62,7 @@ export const login = () => {
   optionSignAs.textContent = 'Or Sign As ..';
 
   buttonLoginOne.addEventListener('click', () => {
-    onNavigate('/home');
+    enterHome();
   });
   buttonBack.addEventListener('click', () => {
     onNavigate('/');
