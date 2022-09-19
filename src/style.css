@@ -158,3 +158,27 @@ div #welcome {
     font-family: 'Charmonman', cursive;
     font-size: 25px;
 }
+#logoHorizontal{
+    position: absolute;
+width: 230px;
+height: 80px;
+left: 99px;
+top: 40px;
+}
+
+#homeIcon{
+    position: absolute;
+width: 50px;
+height: 50px;
+left: 29px;
+top: 142px;
+;
+}
+
+#profile{
+    position: absolute;
+width: 50px;
+height: 50px;
+left: 107px;
+top: 142px;
+}
