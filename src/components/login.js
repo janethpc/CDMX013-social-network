@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { loginUser } from '../lib/auth.js';
+import { loginUser, loginGoogle } from '../lib/auth.js';
 
 export const login = () => {
   function enterHome() {
@@ -18,9 +18,8 @@ export const login = () => {
           // ..
           alert('Contraseña erronea');
         });
-
-
-  }
+  };
+  
   const div = document.createElement('div');
 
   const logoInicio = document.createElement('img');
@@ -45,8 +44,8 @@ export const login = () => {
   const logoTwitter = document.createElement('img');
   logoTwitter.id = 'logoTwitter';
 
-  const logogithub = document.createElement('img');
-  logogithub.id = 'logogithub';
+  const logoGitHub = document.createElement('img');
+  logoGitHub.id = 'logoGitHub';
 
   const buttonBack = document.createElement('button');
   buttonBack.id = 'buttonBack';
@@ -54,11 +53,11 @@ export const login = () => {
   logoInicio.src = './images/logo5.png';
   buttonLoginOne.textContent = 'Log In';
   buttonBack.textContent = 'Back';
-  inputUsername.placeholder = 'Username';
+  inputUsername.placeholder = 'Email';
   inputPassword.placeholder = 'Password';
   logoGoogle.src = './images/btn_google.png';
   logoTwitter.src = './images/btn_twitter.png';
-  logogithub.src = './images/git.png';
+  logoGitHub.src = './images/git.png';
   optionSignAs.textContent = 'Or Sign As ..';
 
   buttonLoginOne.addEventListener('click', () => {
@@ -67,15 +66,18 @@ export const login = () => {
   buttonBack.addEventListener('click', () => {
     onNavigate('/');
   });
+  logoGoogle.addEventListener('click', () => {
+    loginGoogle();
+  });
 
-  div.append(logoInicio,
+    div.append(logoInicio,
     inputUsername,
     inputPassword,
     buttonLoginOne,
     buttonBack,
     logoGoogle,
     logoTwitter,
-    logogithub,
+    logoGitHub,
     optionSignAs);
 
   return div;
