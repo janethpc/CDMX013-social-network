@@ -4,7 +4,8 @@
 }
 
 body {
-    position: relative;
+    min-height: 50vh;
+    overflow-x: hidden; 
     width: 428px;
     height: 926px;
     background: linear-gradient(180deg, #051427 52.6%, #5115FB 99.48%);
@@ -15,24 +16,23 @@ body {
     position: absolute;
     width: 11rem;
     height: 3rem;
-    margin: 4em;
-    justify-content: space-around;
-    top: 14rem;
+    margin: 1em;
+    margin-top: 20rem;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
     color: #F1EF14;
     font-family: 'Charmonman', cursive;
-    font-size: 25px;
+    font-size: 20pt;
+
 }
 
 #register {
     position: absolute;
     width: 11rem;
     height: 3rem;
-    margin: 4em;
-    justify-content: space-around;
-    top: 23rem;
+    margin:1rem;
+    margin-top: 25rem;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -42,12 +42,11 @@ body {
 }
 
 #logo {
-    top: 0px;
-    position: absolute;
     width: 18rem;
     height: 18rem;
+    margin: 1em;
     align-items: center;
-    left: 4rem;
+    top: 0rem;
 }
 
 #or {
@@ -154,4 +153,28 @@ body {
     color: #F1EF14;
     font-family: 'Charmonman', cursive;
     font-size: 25px;
+}
+#logoHorizontal{
+    position: absolute;
+width: 230px;
+height: 80px;
+left: 99px;
+top: 40px;
+}
+
+#homeIcon{
+    position: absolute;
+width: 50px;
+height: 50px;
+left: 29px;
+top: 142px;
+;
+}
+
+#profile{
+    position: absolute;
+width: 50px;
+height: 50px;
+left: 107px;
+top: 142px;
 }
