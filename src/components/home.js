@@ -1,15 +1,9 @@
-import { onNavigate } from '../main.js';
-import { observador } from '../lib/auth.js';
-
 export const home = () => {
-
-  console.log(observador);
-
   const div = document.createElement('div');
 
   const logoHorizontal = document.createElement('img');
   logoHorizontal.src = './images/logoh.png';
-  
+
   const homeIcon = document.createElement('img');
   homeIcon.src = './images/home1.png';
   homeIcon.id = 'homeIcon';
@@ -18,7 +12,7 @@ export const home = () => {
   profile.src = './images/profile.png';
   profile.id = 'profile';
 
-  div.append(logoHorizontal, homeIcon, profile );
+  div.append(logoHorizontal, homeIcon, profile);
 
   return div;
 };
