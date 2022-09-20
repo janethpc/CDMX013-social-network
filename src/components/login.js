@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { loginUser, loginGoogle, loginTwitter } from '../lib/auth.js';
+import { loginUser, loginGoogle, loginTwitter, loginGithub } from '../lib/auth.js';
 
 export const login = () => {
   function enterHome() {
@@ -64,6 +64,10 @@ export const login = () => {
   });
   logoTwitter.addEventListener('click', () => {
     loginTwitter();
+  });
+
+  logoGitHub.addEventListener('click', ()=> {
+    loginGithub();
   });
 
   div.append(
