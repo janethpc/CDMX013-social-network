@@ -1,26 +1,25 @@
 import { onNavigate } from '../main.js';
-import { loginUser } from '../lib/auth.js';
+import { loginUser, loginGoogle, loginTwitter } from '../lib/auth.js';
 
 export const login = () => {
   function enterHome() {
-    const valueEmailLogin = document.getElementById('inputUsername').value
-    const valuePassword = document.getElementById('inputPassword').value 
+    const valueEmailLogin = document.getElementById('inputUsername').value;
+    const valuePassword = document.getElementById('inputPassword').value;
     loginUser(valueEmailLogin, valuePassword).then((userCredential) => {
       // Signed in
-        const user = userCredential.user;
-        onNavigate('/home');
-        console.log(user);
+      const user = userCredential.user;
+      onNavigate('/home');
+      console.log(user);
       // ...
-      })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-          alert('Contraseña erronea');
-        });
-
-
+    })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+        alert('Contraseña erronea');
+      });
   }
+
   const div = document.createElement('div');
 
   const logoInicio = document.createElement('img');
@@ -45,38 +44,38 @@ export const login = () => {
   const logoTwitter = document.createElement('img');
   logoTwitter.id = 'logoTwitter';
 
-  const logogithub = document.createElement('img');
-  logogithub.id = 'logogithub';
-
-  const buttonBack = document.createElement('button');
-  buttonBack.id = 'buttonBack';
+  const logoGitHub = document.createElement('img');
+  logoGitHub.id = 'logoGitHub';
 
   logoInicio.src = './images/logo5.png';
   buttonLoginOne.textContent = 'Log In';
-  buttonBack.textContent = 'Back';
-  inputUsername.placeholder = 'Username';
+  inputUsername.placeholder = 'Email';
   inputPassword.placeholder = 'Password';
   logoGoogle.src = './images/btn_google.png';
   logoTwitter.src = './images/btn_twitter.png';
-  logogithub.src = './images/git.png';
+  logoGitHub.src = './images/git.png';
   optionSignAs.textContent = 'Or Sign As ..';
 
   buttonLoginOne.addEventListener('click', () => {
     enterHome();
   });
-  buttonBack.addEventListener('click', () => {
-    onNavigate('/');
+  logoGoogle.addEventListener('click', () => {
+    loginGoogle();
+  });
+  logoTwitter.addEventListener('click', () => {
+    loginTwitter();
   });
 
-  div.append(logoInicio,
+  div.append(
+    logoInicio,
     inputUsername,
     inputPassword,
     buttonLoginOne,
-    buttonBack,
     logoGoogle,
     logoTwitter,
-    logogithub,
-    optionSignAs);
+    logoGitHub,
+    optionSignAs,
+  );
 
   return div;
 };
