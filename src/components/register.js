@@ -21,7 +21,6 @@ export const register = () => {
   }
 
   const div = document.createElement('div');
-  div.id = 'divRegister';
 
   const logoInicio = document.createElement('img');
   logoInicio.id = 'logo';
