@@ -1,75 +1,83 @@
 * {
     margin: 0;
     padding: 0;
+
 }
 
 body {
-    min-height: 50vh;
-    overflow-x: hidden; 
-    width: 428px;
-    height: 926px;
-    background: linear-gradient(180deg, #051427 52.6%, #5115FB 99.48%);
-   
+    overflow-x: hidden;
+    position: inherit;
+    background-image: url('../images/background.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
+
 div #welcome {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    place-items: center;
 }
 
-#logIn {
-    position: absolute;
-    width: 11rem;
-    height: 3rem;
-    margin: 1em;
-    margin-top: 20rem;
-    background: rgba(254, 102, 196, 0.69);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-    color: #F1EF14;
-    font-family: 'Charmonman', cursive;
-    font-size: 20pt;
-
+div #divLogin {
+    display: grid;
+    place-items: center;
 }
 
-#register {
-    position: absolute;
-    width: 11rem;
-    height: 3rem;
-    margin:1rem;
-    margin-top: 27rem;
-    background: rgba(254, 102, 196, 0.69);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-    color: #F1EF14;
-    font-family: 'Charmonman', cursive;
-    font-size: 20pt;
+div #divRegister {
+    display: grid;
+    place-items: center;
 }
 
 #logo {
     width: 18rem;
     height: 18rem;
     margin: 1em;
-    align-items: center;
     top: 0rem;
+}
+
+#logIn {
+    position: absolute;
+    width: 11rem;
+    height: 3.4rem;
+    margin: 1em;
+    margin-top: 35rem;
+    background: rgba(254, 102, 196, 0.69);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    color: #F1EF14;
+    font-family: 'Charmonman', cursive;
+    font-size: 20pt;
+}
+
+#register {
+    position: absolute;
+    width: 11rem;
+    height: 3.4rem;
+    margin: 1rem;
+    margin-top: 55rem;
+    background: rgba(254, 102, 196, 0.69);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    color: #F1EF14;
+    font-family: 'Charmonman', cursive;
+    font-size: 20pt;
 }
 
 #or {
     position: absolute;
     color: #F1EF14;
-    top: 24.5rem;
-    margin-left: 1rem;
+    top: 32rem;
     font-family: 'Charmonman', cursive;
     font-size: 20px;
 }
 
 #inputUsername {
-    position: absolute;
+    position: relative;
     width: 204px;
     height: 42px;
-    left: 113px;
-    top: 18.75rem;
+    top: 4.5rem;
     background: transparent;
-    color:#F1EF14;
+    color: #F1EF14;
     border-top: transparent;
     border-left: transparent;
     border-right: transparent;
@@ -78,13 +86,12 @@ div #welcome {
 }
 
 #inputPassword {
-    position: absolute;
+    position: relative;
     width: 204px;
     height: 42px;
-    left: 113px;
-    top: 21.8rem;
+    top: 6rem;
     background: transparent;
-    color:#F1EF14;
+    color: #F1EF14;
     border-top: transparent;
     border-left: transparent;
     border-right: transparent;
@@ -92,12 +99,12 @@ div #welcome {
     letter-spacing: 0.2em;
 }
 
-#logIn2 { /*boton create acount */
-    position: absolute;
+#logIn2 {
+    /*boton create acount */
+    position: relative;
     width: 11rem;
-    height: 3rem;
-    top: 26rem;
-    left: 8rem;    
+    height: 3.4rem;
+    top: 8rem;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -105,45 +112,46 @@ div #welcome {
     font-family: 'Charmonman', cursive;
     font-size: 25px;
 }
-#SignAs{
-    position: absolute;
+
+#SignAs {
+    position: relative;
     width: 11rem;
     height: 3rem;
-    left: 8rem;
-    top: 32rem;
+    top: 1rem;
     color: #F1EF14;
     font-family: 'Charmonman', cursive;
     font-size: 18px;
-   text-align: center;    
+    text-align: center;
 }
+
 #logoGoogle {
-    position: absolute;
-    width: 11rem;
-    height: 3rem; 
-    top: 35rem;
-    left: 8rem;
-}
-#logoTwitter{
-    position: absolute;
-    width: 11rem;
-    height: 3rem; 
-    top: 38rem;
-    left: 8rem;
-}
-#logoGitHub{
-    position: absolute;
-    width: 11rem;
-    height: 2.5rem; 
-    top: 41.5rem;
-    left: 8rem;
-    border-radius: .8rem;
-}
-#buttonBack { /* boton regresar*/
-    position: absolute;
+    position: relative;
     width: 11rem;
     height: 3rem;
-    left: 8rem;
-    top: 30rem;
+    top: 12.5rem;
+}
+
+#logoTwitter {
+    position: relative;
+    width: 11rem;
+    height: 3rem;
+    top: 13.5rem;
+}
+
+#logoGitHub {
+    position: relative;
+    width: 11rem;
+    height: 2.5rem;
+    top: 14.5rem;
+    border-radius: .8rem;
+}
+
+#buttonBack {
+    /* boton regresar*/
+    position: relative;
+    width: 11rem;
+    height: 3rem;
+    top: 14.5rem;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -151,27 +159,27 @@ div #welcome {
     font-family: 'Charmonman', cursive;
     font-size: 25px;
 }
-#logoHorizontal{
+
+#logoHorizontal {
     position: absolute;
-width: 230px;
-height: 80px;
-left: 99px;
-top: 40px;
+    width: 230px;
+    height: 80px;
+    left: 99px;
+    top: 40px;
 }
 
-#homeIcon{
+#homeIcon {
     position: absolute;
-width: 50px;
-height: 50px;
-left: 29px;
-top: 142px;
-;
+    width: 50px;
+    height: 50px;
+    left: 29px;
+    top: 142px;
 }
 
-#profile{
+#profile {
     position: absolute;
-width: 50px;
-height: 50px;
-left: 107px;
-top: 142px;
+    width: 50px;
+    height: 50px;
+    left: 107px;
+    top: 142px;
 }
