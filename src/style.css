@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-
 }
 
 body {
@@ -66,7 +65,7 @@ div #divRegister {
 #or {
     position: absolute;
     color: #F1EF14;
-    top: 32rem;
+    top: 31rem;
     font-family: 'Charmonman', cursive;
     font-size: 20px;
 }

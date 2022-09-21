@@ -8,7 +8,7 @@ export const register = () => {
     registerUser(valueEmail, password).then((userCredential) => {
     // Signed in
       const user = userCredential.user;
-      alert('usuario registrado correctamente');
+      alert('Registered Successfully');
       console.log(user);
     // ...
     })
@@ -16,7 +16,7 @@ export const register = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
-        alert('nel carnal no te pueder registrar');
+        alert('Sorry, something went wrong');
       });
   }
 
