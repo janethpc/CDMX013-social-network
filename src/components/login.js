@@ -21,7 +21,6 @@ export const login = () => {
   }
 
   const div = document.createElement('div');
-  div.id = 'divLogin'
 
   const logoInicio = document.createElement('img');
   logoInicio.id = 'logo';
