@@ -2,6 +2,7 @@ import { onNavigate } from '../main.js';
 
 export const welcome = () => {
   const div = document.createElement('div');
+  div.id= 'welcome';
 
   const logoInicio = document.createElement('img');
   logoInicio.id = 'logo';
@@ -17,7 +18,7 @@ export const welcome = () => {
 
   logoInicio.src = './images/logo5.png';
   buttonLogin.textContent = 'Log In';
-  buttonRegister.textContent = 'Sign In';
+  buttonRegister.textContent = 'Register';
   optionOr.textContent = 'Or';
 
   buttonLogin.addEventListener('click', () => {

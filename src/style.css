@@ -1,71 +1,83 @@
 * {
     margin: 0;
     padding: 0;
+
 }
 
 body {
-    position: relative;
-    width: 428px;
-    height: 926px;
-    background: linear-gradient(180deg, #051427 52.6%, #5115FB 99.48%);
-    margin: auto;
+    overflow-x: hidden;
+    position: inherit;
+    background-image: url('../images/background.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+div #welcome {
+    display: grid;
+    place-items: center;
+}
+
+div #divLogin {
+    display: grid;
+    place-items: center;
+}
+
+div #divRegister {
+    display: grid;
+    place-items: center;
+}
+
+#logo {
+    width: 18rem;
+    height: 18rem;
+    margin: 1em;
+    top: 0rem;
 }
 
 #logIn {
     position: absolute;
-    width: 204px;
-    height: 53px;
-    margin: 4em;
-    justify-content: space-around;
-    top: 450px;
+    width: 11rem;
+    height: 3.4rem;
+    margin: 1em;
+    margin-top: 35rem;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
     color: #F1EF14;
     font-family: 'Charmonman', cursive;
-    font-size: 25px;
+    font-size: 20pt;
 }
 
 #register {
     position: absolute;
-    width: 204px;
-    height: 53px;
-    margin: 4em;
-    justify-content: space-around;
-    top: 630px;
+    width: 11rem;
+    height: 3.4rem;
+    margin: 1rem;
+    margin-top: 55rem;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
     color: #F1EF14;
     font-family: 'Charmonman', cursive;
-    font-size: 25px;
-}
-
-#logo {
-    top: 0px;
-    position: absolute;
-    width: 385.43px;
-    height: 396.76px;
-    left: 21px;
+    font-size: 20pt;
 }
 
 #or {
     position: absolute;
     color: #F1EF14;
-    top: 650px;
-    margin-left: 190px;
+    top: 32rem;
     font-family: 'Charmonman', cursive;
     font-size: 20px;
 }
 
 #inputUsername {
-    position: absolute;
+    position: relative;
     width: 204px;
     height: 42px;
-    left: 113px;
-    top: 400px;
+    top: 4.5rem;
     background: transparent;
-    color:#F1EF14;
+    color: #F1EF14;
     border-top: transparent;
     border-left: transparent;
     border-right: transparent;
@@ -74,13 +86,12 @@ body {
 }
 
 #inputPassword {
-    position: absolute;
+    position: relative;
     width: 204px;
     height: 42px;
-    left: 113px;
-    top: 470px;
+    top: 6rem;
     background: transparent;
-    color:#F1EF14;
+    color: #F1EF14;
     border-top: transparent;
     border-left: transparent;
     border-right: transparent;
@@ -88,13 +99,12 @@ body {
     letter-spacing: 0.2em;
 }
 
-#logIn2 { /*boton create acount */
-    position: absolute;
-    width: 204px;
-    height: 53px;
-    margin: 4.5em;
-    justify-content: space-around;
-    top: 470px;
+#logIn2 {
+    /*boton create acount */
+    position: relative;
+    width: 11rem;
+    height: 3.4rem;
+    top: 8rem;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -103,42 +113,97 @@ body {
     font-size: 25px;
 }
 
-#buttonBack { /* boton regresar*/
-    position: absolute;
-    width: 204px;
-    height: 53px;
-    margin: 4.5em;
-    justify-content: space-around;
-    top: 750px;
-    background: rgba(254, 102, 196, 0.69);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
+#SignAs {
+    position: relative;
+    width: 11rem;
+    height: 3rem;
+    top: 1rem;
     color: #F1EF14;
     font-family: 'Charmonman', cursive;
-    font-size: 25px;
+    font-size: 18px;
+    text-align: center;
 }
 
 #logoGoogle {
-    position: absolute;
-    width: 204px;
-    height: 45px;
-    left: 110px;
-    top: 670px;
+    position: relative;
+    width: 11rem;
+    height: 3rem;
+    top: 12.5rem;
 }
 
-#logoTwitter{
-    position: absolute;
-    width: 204px;
-    height: 45px;
-    left: 110px;
-    top: 730px;
+#logoTwitter {
+    position: relative;
+    width: 11rem;
+    height: 3rem;
+    top: 13.5rem;
 }
 
-#logogithub{
-    position: absolute;
-    width: 190px;
-    height: 35px;
-    left: 115px;
-    top: 795px; 
-    border-radius: 8px;
+#logoGitHub {
+    position: relative;
+    width: 11rem;
+    height: 2.5rem;
+    top: 14.5rem;
+    border-radius: .8rem;
+}
+
+#buttonBack {
+    position: relative;
+    width: 11rem;
+    height: 3rem;
+    top: 14.5rem;
+    background: rgba(254, 102, 196, 0.69);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    color: #F1EF14;
+    font-family: 'Charmonman', cursive;
+    font-size: 25px;
+}
+
+#logoHorizontal {
+    position:relative;
+    width: 11rem;
+    height: 5rem;
+    top: 0rem;
+}
+
+#homeIcon {
+    display: flex;
+    justify-content: flex-end;
+    width: 30px;
+    height: 30px;
+    top: 6rem;
+}
+
+#profile {
+    width: 30px;
+    height: 30px;
+    top: 6rem;
+}
+#home{
+    display: grid;
+    place-items: center;
+}
+
+#inputPost {
+    position: relative;
+    top: 12rem;
+    margin: 1rem;
+    width: 15rem;
+    height: 5rem;
+}
+h2 {
+    position: relative;
+    color: #F1EF14;
+    font-family: 'Charmonman', cursive;
+    font-size: 25px;
+}
+p{
+    position: relative;  
+    color: #FE66C4;
+    font-family: 'Charmonman', cursive;
+    font-size: 25px;  
+}
+.divCenterW{
+    display: grid;
+    place-items: center;  
 }
