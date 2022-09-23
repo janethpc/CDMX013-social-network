@@ -1,4 +1,4 @@
-import { cerrarsesion, observadorUser } from '../lib/auth.js';
+import { cerrarsesion, verUsuario } from '../lib/auth.js';
 
 export const home = () => {
   const div = document.createElement('div');
@@ -14,15 +14,19 @@ export const home = () => {
   homeIcon.addEventListener('click', () => {
     cerrarsesion();
   });
+  
+  const usuario = verUsuario();
+console.log(usuario);
+
+const verEmail = usuario.email;
+
 
   const profile = document.createElement('img');
   profile.src = './images/profile.png';
   profile.id = 'profile';
   
   const greeting = document.createElement('h2');
-  const emailver = ""; 
-  
-  greeting.textContent = 'Hola, Usuari@ 🖐🙋‍♀️' + emailver;
+  greeting.textContent = 'Hola, Usuari@ 🖐🙋‍♀️' +verEmail;
   greeting.className = 'titlePost';
 
   const questionPost = document.createElement('p');
