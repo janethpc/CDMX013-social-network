@@ -14,17 +14,14 @@ export const home = () => {
   homeIcon.addEventListener('click', () => {
     cerrarsesion();
   });
-  
-  const usuario = verUsuario();
-console.log(usuario);
-
-const verEmail = usuario.email;
-
 
   const profile = document.createElement('img');
   profile.src = './images/profile.png';
   profile.id = 'profile';
   
+  const usuario = verUsuario();
+console.log(usuario);
+const verEmail = usuario.email;
   const greeting = document.createElement('h2');
   greeting.textContent = 'Hola, Usuari@ 🖐🙋‍♀️' +verEmail;
   greeting.className = 'titlePost';

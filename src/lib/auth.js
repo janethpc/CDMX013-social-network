@@ -15,7 +15,6 @@ import { onNavigate } from '../main.js';
 
 const auth = getAuth();
 
-
 export const registerUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 
 export const loginUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
@@ -102,16 +101,15 @@ export const loginGithub = () => signInWithPopup(auth, providerGithub)
     });
   };
 
- export function verUsuario(){
+export function verUsuario() {
   const user = auth.currentUser;
   return user;
- } 
+};
 
- 
-  export const cerrarsesion= () => signOut(auth)
+export const cerrarsesion = () => signOut(auth)
   .then(() => {
-      onNavigate('/');
-      // Sign-out successful.
-    }).catch((error) => {
-      // An error happened.
-    });
+    onNavigate('/');
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
+  });
