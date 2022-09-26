@@ -1,7 +1,9 @@
+import { cerrarsesion, verUsuario } from '../lib/auth.js';
+
 export const home = () => {
   const div = document.createElement('div');
   div.id ='home';
-
+  
   const logoHorizontal = document.createElement('img');
   logoHorizontal.src = './images/logoh.png';
   logoHorizontal.id = 'logoHorizontal'
@@ -9,13 +11,19 @@ export const home = () => {
   const homeIcon = document.createElement('img');
   homeIcon.src = './images/home1.png';
   homeIcon.id = 'homeIcon';
+  homeIcon.addEventListener('click', () => {
+    cerrarsesion();
+  });
 
   const profile = document.createElement('img');
   profile.src = './images/profile.png';
   profile.id = 'profile';
-
+  
+  const usuario = verUsuario();
+console.log(usuario);
+const verEmail = usuario.email;
   const greeting = document.createElement('h2');
-  greeting.textContent = 'Hola, Usuari@ 🖐🙋‍♀️';
+  greeting.textContent = 'Hola, Usuari@ 🖐🙋‍♀️' +verEmail;
   greeting.className = 'titlePost';
 
   const questionPost = document.createElement('p');

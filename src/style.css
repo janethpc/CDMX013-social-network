@@ -206,3 +206,7 @@ p{
     display: grid;
     place-items: center;  
 }
+
+#usuario{
+    color: red;
+}

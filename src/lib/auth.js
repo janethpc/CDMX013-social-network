@@ -5,8 +5,11 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   TwitterAuthProvider,
-  GithubAuthProvider}
+  GithubAuthProvider,
+  onAuthStateChanged,
+  signOut}
   from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
+
 import { app } from './config.js';
 import { onNavigate } from '../main.js';
 
@@ -80,4 +83,33 @@ export const loginGithub = () => signInWithPopup(auth, providerGithub)
     // The AuthCredential type that was used.
     const credential = GithubAuthProvider.credentialFromError(error);
     // ...
+  });
+
+  export function observadorUser() {
+  onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        const email = user.email;
+        console.log ('Usuario Activo', uid, email)
+        // ...
+      } else {
+        // User is signed out
+        // ...
+      }
+    });
+  };
+
+export function verUsuario() {
+  const user = auth.currentUser;
+  return user;
+};
+
+export const cerrarsesion = () => signOut(auth)
+  .then(() => {
+    onNavigate('/');
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
   });
