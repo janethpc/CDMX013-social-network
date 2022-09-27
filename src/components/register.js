@@ -6,17 +6,17 @@ export const register = () => {
     const valueEmail = document.getElementById('inputUsername').value;
     const password = document.getElementById('inputPassword').value;
     registerUser(valueEmail, password).then((userCredential) => {
-    // Signed in
+      // Signed in
       const user = userCredential.user;
-      alert('Registered Successfully');
+      alert('usuario registrado correctamente');
       console.log(user);
-    // ...
+      // ...
     })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
-        alert('Sorry, something went wrong');
+        alert('nel carnal no te pueder registrar');
       });
   }
 

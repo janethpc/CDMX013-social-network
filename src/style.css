@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+
 }
 
 body {
@@ -65,7 +66,7 @@ div #divRegister {
 #or {
     position: absolute;
     color: #F1EF14;
-    top: 31rem;
+    top: 32rem;
     font-family: 'Charmonman', cursive;
     font-size: 20px;
 }
@@ -159,7 +160,7 @@ div #divRegister {
 }
 
 #logoHorizontal {
-    position:relative;
+    position: relative;
     width: 11rem;
     height: 5rem;
     top: 0rem;
@@ -178,7 +179,8 @@ div #divRegister {
     height: 30px;
     top: 6rem;
 }
-#home{
+
+#home {
     display: grid;
     place-items: center;
 }
@@ -190,18 +192,19 @@ div #divRegister {
     width: 15rem;
     height: 5rem;
 }
+
 h2 {
     position: relative;
     color: #F1EF14;
     font-family: 'Charmonman', cursive;
     font-size: 25px;
 }
-p{
-    position: relative;  
+
+p {
+    position: relative;
     color: #FE66C4;
     font-family: 'Charmonman', cursive;
-    font-size: 25px; 
-    top: 2 rem; 
+    font-size: 25px;
 }
 
 #buttonPost {

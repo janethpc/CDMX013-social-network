@@ -12,28 +12,24 @@ export const home = () => {
   const homeIcon = document.createElement('img');
   homeIcon.src = './images/home1.png';
   homeIcon.id = 'homeIcon';
-  homeIcon.addEventListener('click', () => {
-    cerrarsesion();
-  });
 
   const logOut = document.createElement('img');
   logOut.src = './images/cerrar.png';
-  logOut.id = 'profile';
-
-  const usuario = verUsuario();
-  console.log(usuario);
-
-  const verEmail = usuario.email;
+  logOut.id = 'logOut';
+  logOut.addEventListener('click', () => {
+    cerrarsesion();
+  });
 
   const greeting = document.createElement('h2');
-  greeting.textContent = `Hola ${verEmail}`;
+  greeting.textContent = 'Hola ';
   greeting.id = 'titlePost';
 
   const questionPost = document.createElement('p');
   questionPost.textContent = '¿Quieres compartir algo?';
   questionPost.id = 'questionPost';
 
-  const inputPost = document.createElement('form');
+  const inputPost = document.createElement('input');
+
   inputPost.className = 'inputPost';
   inputPost.placeholder = 'Escribe aqui... ';
   inputPost.id = 'inputPost';
@@ -43,7 +39,7 @@ export const home = () => {
   buttonPost.className = 'buttonPost';
   buttonPost.textContent = 'Post';
   buttonPost.addEventListener('click', async () => {
-    await savePost();
+    await savePost(inputPost.value);
   });
 
   div.append(logoHorizontal, homeIcon, logOut, greeting, inputPost, questionPost, buttonPost);
