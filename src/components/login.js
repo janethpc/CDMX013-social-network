@@ -1,5 +1,8 @@
 import { onNavigate } from '../main.js';
-import { loginUser, loginGoogle, loginTwitter, loginGithub } from '../lib/auth.js';
+import {
+  loginUser, loginGoogle, loginTwitter, loginGithub,
+} from '../lib/auth.js';
+// import { cerrarsesion, verUsuario } from '../lib/auth.js';
 
 export const login = () => {
   function enterHome() {
@@ -21,8 +24,8 @@ export const login = () => {
   }
 
   const div = document.createElement('div');
-  div.id = 'divLogin'
-  
+  div.id = 'divLogin';
+
   const logoInicio = document.createElement('img');
   logoInicio.id = 'logo';
 
@@ -67,9 +70,25 @@ export const login = () => {
     loginTwitter();
   });
 
-  logoGitHub.addEventListener('click', ()=> {
+  logoGitHub.addEventListener('click', () => {
     loginGithub();
   });
+
+  // const usuario = verUsuario();
+  // console.log(usuario);
+
+  // const verEmail = usuario.email;
+
+  // const greeting = document.createElement('h2');
+  // greeting.textContent = `Hola , ${verEmail}`;
+  // greeting.id = 'titlePost';
+
+  // const logOut = document.createElement('img');
+  // logOut.src = './images/cerrar.png';
+  // logOut.id = 'logOut';
+  // logOut.addEventListener('click', () => {
+  // cerrarsesion();
+  // });
 
   div.append(
     logoInicio,
