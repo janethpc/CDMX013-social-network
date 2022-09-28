@@ -39,7 +39,7 @@ div #divRegister {
     width: 11rem;
     height: 3.4rem;
     margin: 1em;
-    margin-top: 35rem;
+    margin-top: 30rem;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -53,7 +53,7 @@ div #divRegister {
     width: 11rem;
     height: 3.4rem;
     margin: 1rem;
-    margin-top: 55rem;
+    margin-top: 47rem;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -65,7 +65,7 @@ div #divRegister {
 #or {
     position: absolute;
     color: #F1EF14;
-    top: 32rem;
+    top: 27rem;
     font-family: 'Charmonman', cursive;
     font-size: 20px;
 }
@@ -81,7 +81,7 @@ div #divRegister {
     border-left: transparent;
     border-right: transparent;
     border-color: #FE66C4;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
 }
 
 #inputPassword {
@@ -158,34 +158,34 @@ div #divRegister {
     font-size: 25px;
 }
 
-div #home {
-    display: grid;
-    position: absolute;
+div #header {
+    display: flex;
+    position: fixed;
+    z-index: 3;
+    justify-content: space-around;
+    /*fixed y z index*/
+    /*margintop  post30px*/
 }
 
 #logoHorizontal {
-    position: fixed;
     width: 11rem;
     height: 5rem;
-    margin: 1rem;
+    /*margin: 1rem;*/
+    justify-content: center;
 }
-
-/*#homeIcon {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    top: 10rem;
-    margin-left: 1rem;
-}*/
 
 #logOut {
-    position: fixed;
     width: 30px;
     height: 30px;
-    top: 3rem;
-    margin-left: 20rem
+    top: 2rem;
+    /*margin-left: 14.5rem;*/
 }
-
+div #divPost {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-top: 30px;
+}
 #titlePost {
     position: inherit;
     color: #F1EF14;
