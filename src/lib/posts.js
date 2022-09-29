@@ -11,9 +11,9 @@ export const savePost = async (text) => {
     });
     console.log('Document written with ID: ', docRef);
     if (docRef.id != '') {
-      console.log('se guardo');
+      console.log('Se guardo correctamente');
     }
   } else {
-    console.error('Ojoo checa tu text! ');
+    console.error('Introduce texto ');
   }
 };

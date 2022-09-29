@@ -2,16 +2,15 @@ import { cerrarsesion, verUsuario } from '../lib/auth.js';
 import { savePost } from '../lib/posts.js';
 
 export const home = () => {
-  const div = document.createElement('div');
-  div.id = 'home';
+  const container = document.createElement('div');
+  container.id = 'container';
+
+  const divHeader = document.createElement('div');
+  divHeader.id = 'header';
 
   const logoHorizontal = document.createElement('img');
   logoHorizontal.src = './images/logoh.png';
   logoHorizontal.id = 'logoHorizontal';
-
-  //const homeIcon = document.createElement('img');
-  //homeIcon.src = './images/home1.png';
- // homeIcon.id = 'homeIcon';
 
   const logOut = document.createElement('img');
   logOut.src = './images/cerrar.png';
@@ -20,8 +19,11 @@ export const home = () => {
     cerrarsesion();
   });
 
+  const divPost = document.createElement('div');
+  divPost.id = 'divPost';
+
   const greeting = document.createElement('p');
-  greeting.textContent = 'Hola ';
+  greeting.textContent = 'Hola ,';
   greeting.id = 'titlePost';
 
   const questionPost = document.createElement('p');
@@ -41,8 +43,8 @@ export const home = () => {
   buttonPost.addEventListener('click', async () => {
     await savePost(inputPost.value);
   });
-
-  div.append(logoHorizontal, /*homeIcon,*/ logOut, greeting, inputPost, questionPost, buttonPost);
-
-  return div;
+  container.append(divHeader, divPost);
+  divHeader.append(logoHorizontal, logOut);
+  divPost.append(greeting, inputPost, questionPost, buttonPost);
+  return container;
 };
