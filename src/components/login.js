@@ -74,6 +74,15 @@ export const login = () => {
     loginGithub();
   });
 
+  // const usuario = verUsuario();
+  // console.log(usuario);
+
+  // const verEmail = usuario.email;
+
+  // const greeting = document.createElement('h2');
+  // greeting.textContent = `Hola , ${verEmail}`;
+  // greeting.id = 'titlePost';
+
   // const logOut = document.createElement('img');
   // logOut.src = './images/cerrar.png';
   // logOut.id = 'logOut';
