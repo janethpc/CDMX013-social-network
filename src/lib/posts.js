@@ -1,4 +1,4 @@
-import { collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
+import { collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 import { db } from './config.js';
 
 export const savePost = async (text) => {
@@ -11,9 +11,11 @@ export const savePost = async (text) => {
     });
     console.log('Document written with ID: ', docRef);
     if (docRef.id != '') {
-      console.log('Se guardo correctamente');
+      console.log('se guardo');
     }
   } else {
-    console.error('Introduce texto ');
+    console.error('Ojoo checa tu text! ');
   }
 };
+
+export const getTask = () => getDocs(collection(db, 'posts'));
