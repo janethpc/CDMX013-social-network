@@ -162,50 +162,45 @@ div #header {
     background-color: #051427 !important;
     display: flex;
     position: fixed !important;
-    z-index: 3;
-    justify-content: space-around;
+    z-index: 10;
+   justify-content: space-around;
     width: 100%;
-    height: 5em;
-    /*margin-top: -160px;*/
-    /*fixed y z index*/
-    /*margintop  post30px*/
+    height: 70px;
+    top: 0px;
 }
 
 #logoHorizontal {
     width: 11rem;
     height: 5rem;
-    /*margin: 1rem;*/
-    justify-content: center;
-    align-self: center;
+   
 }
 
 #logOut {
     width: 30px;
     height: 30px;
     align-self: center;
-    /*margin-left: 14.5rem;*/
+       
 }
 div #divPost {
-    display: grid;
-    position: absolute;
+    position: relative;
     justify-content: center;
     width: 100%;
-}
-#titlePost {
+    }
+#titlePost { /*hola */
     position: inherit;
     color: #F1EF14;
     font-family: 'Charmonman', cursive;
     font-size: 1.1rem;
-    top: 7rem;
+    align-items: center;
     justify-self: center;
+    margin-top: 2rem;
 }
 
 #questionPost {
-    position: inherit;
     color: #FE66C4;
     font-family: 'Charmonman', cursive;
     font-size: 1rem;
-    top: 9rem;
+    top: 10rem;
     justify-self: center;
 }
 
@@ -231,4 +226,27 @@ div #divPost {
     font-size: 15px;
     text-align: center;
     justify-self: flex-end;
+}
+#taskContainer {
+color: white;
+font-size: 8pt;
+font-family: Arial, Helvetica, sans-serif;
+border: #FE66C4;
+margin: 20px;
+}
+#sectionPost {
+    width: 80%;
+    height: 100px;
+    margin: 5px;
+    color: white;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-size: 15px;
+    border-color: #FE66C4;
+    background-color: transparent;
+   margin-top: 100px;
+}
+div #divWall {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
 }
