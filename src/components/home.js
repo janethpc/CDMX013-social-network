@@ -22,9 +22,10 @@ export const home = () => {
       console.log(`${doc.data()}+ 'datos de posts`);
   });
   tasksContainer.innerHTML = html;
+});
 
-  });
-   const container = document.createElement('div');
+export const home = () => {
+  const container = document.createElement('div');
   container.id = 'container';
 
   const divHeader = document.createElement('div');
