@@ -10,11 +10,12 @@ window.addEventListener('DOMContentLoaded', async () => {
   onSnapshot.forEach((doc) => {
     const task = doc.data();
     html += `
-    <button id=sectionPost>
-    <div id='divTask' class='card'>
-    <h2>${task.texto}</h2> 
-    </div>
-   </button>
+    <section id="sectionPost" class="card">
+    <p>${task.texto}</p>
+    </section>
+    <img src='./images/borrar.png' id='borrar' ></img>
+    <img src='./images/hearts.png' id='heart' ></img>
+    <button id='delete' >Delete</button>
     `;
     console.log(`${doc.data()}+ 'datos de posts`);
   });

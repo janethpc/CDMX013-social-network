@@ -231,11 +231,11 @@ div #divPost {
 color: white;
 font-size: 8pt;
 font-family: Arial, Helvetica, sans-serif;
-border: #FE66C4;
+border-color: #FE66C4;
 margin: 20px;
 }
-#sectionPost {
-    width: 80%;
+.card {
+    width: 65%;
     height: 100px;
     margin: 5px;
     color: white;
@@ -243,10 +243,18 @@ margin: 20px;
     font-size: 15px;
     border-color: #FE66C4;
     background-color: transparent;
-   margin-top: 100px;
+    margin-top: 100px;
+    border-style: double;
 }
 div #divWall {
     display: flex;
-    flex-direction: column;
     margin-top: 100px;
+}
+#borrar {
+    width: 30px;
+    margin-left: 30rem;
+}
+#heart {
+    width: 30px;
+    margin-left: 30rem;
 }
