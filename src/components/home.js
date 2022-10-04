@@ -13,9 +13,8 @@ window.addEventListener('DOMContentLoaded', async () => {
     <section id="sectionPost" class="card">
     <p>${task.texto}</p>
     </section>
-    <img src='./images/borrar.png' id='borrar' ></img>
+    <img src='./images/borrar.png' id='btnDelete' class='btnDelete' data-id='${doc.id}' ></img>
     <img src='./images/hearts.png' id='heart' ></img>
-    <button id='btnDelete' class='btnDelete' data-id='${doc.id}' >Delete</button>
     `;
   });
   tasksContainer.innerHTML = html;

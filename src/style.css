@@ -251,7 +251,7 @@ div #divWall {
     display: flex;
     margin-top: 100px;
 }
-#borrar {
+#btnDelete {
     width: 30px;
     margin-left: 30rem;
 }
