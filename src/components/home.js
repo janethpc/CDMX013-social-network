@@ -1,5 +1,5 @@
 import { cerrarsesion, verUsuario } from '../lib/auth.js';
-import { savePost, getPost } from '../lib/posts.js';
+import { savePost, getPost, deletePost } from '../lib/posts.js';
 
 
 const tasksContainer = document.createElement('taskContainer');
@@ -16,13 +16,18 @@ export const home = () => {
       <section id="sectionPost" class="card">
       <p>${task.texto}</p>
       </section>
-      <img src='./images/borrar.png' id='borrar' ></img>
-      <img src='./images/hearts.png' id='heart' ></img>
-      <button id='delete' >Delete</button>
-      `;
-      console.log(`${doc.data()}+ 'datos de posts`);
+      <img src='./images/borrar.png' id='btnDelete' class='btnDelete' data-id='${doc.id}' ></img>
+    <img src='./images/hearts.png' id='heart' ></img>
+    `;
   });
   tasksContainer.innerHTML = html;
+  const btnsDelete = tasksContainer.querySelectorAll('.btnDelete');
+  btnsDelete.forEach((btn) => {
+    btn.addEventListener('click', ({ target: { dataset } }) => {
+      console.log(dataset.id);
+      deletePost(dataset.id);
+    });
+  });
 });
  
   const container = document.createElement('div');
