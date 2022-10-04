@@ -76,4 +76,4 @@ export const home = () => {
   divHeader.append(logoHorizontal, greeting, logOut);
   divPost.append(inputPost, questionPost, buttonPost);
   return container;
-};
+}
