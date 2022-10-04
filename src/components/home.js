@@ -24,8 +24,6 @@ export const home = () => {
   });
   tasksContainer.innerHTML = html;
 });
-
-  });
  
   const container = document.createElement('div');
   container.id = 'container';
