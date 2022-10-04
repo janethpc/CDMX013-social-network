@@ -4,43 +4,29 @@ import { savePost, getPost } from '../lib/posts.js';
 
 const tasksContainer = document.createElement('taskContainer');
 tasksContainer.id = 'taskContainer';
-window.addEventListener('DOMContentLoaded', async () => {
-const imprimirPost = getPost((querySnapshot)=>{
-  let html = "";
-  imprimirPost.forEach((doc) => {
-    const task = doc.data();
-    html += `
-    <section id="sectionPost" class="card">
-    <p>${task.texto}</p>
-    </section>
-    <img src='./images/borrar.png' id='borrar' ></img>
-    <img src='./images/hearts.png' id='heart' ></img>
-    <button id='delete' >Delete</button>
-    `;
-    console.log(`${doc.data()}+ 'datos de posts`);
-});
-tasksContainer.innerHTML = html;
-});
-
 //window.addEventListener('DOMContentLoaded', async () => {
-  //const Snapshot = await getTask();
-  //let html = '';
-  //Snapshot.forEach((doc) => {
-    //const task = doc.data();
-    //html += `
-    //<section id="sectionPost" class="card">
-    //<p>${task.texto}</p>
-    //</section>
-    //<img src='./images/borrar.png' id='borrar' ></img>
-    //<img src='./images/hearts.png' id='heart' ></img>
-    //<button id='delete' >Delete</button>
-    /* `;
-    console.log(`${doc.data()}+ 'datos de posts`);
-  });
-  tasksContainer.innerHTML = html;
-}); */
 
 export const home = () => {
+
+  const imprimirPost = getPost((querySnapshot)=>{
+    console.log("pintado de posts");
+    let html = "";
+    querySnapshot.forEach((doc) => {
+      const task = doc.data();
+      html += `
+      <section id="sectionPost" class="card">
+      <p>${task.texto}</p>
+      </section>
+      <img src='./images/borrar.png' id='borrar' ></img>
+      <img src='./images/hearts.png' id='heart' ></img>
+      <button id='delete' >Delete</button>
+      `;
+      console.log(`${doc.data()}+ 'datos de posts`);
+  });
+  tasksContainer.innerHTML = html;
+
+  });
+ 
   const container = document.createElement('div');
   container.id = 'container';
 
@@ -51,12 +37,12 @@ export const home = () => {
   logoHorizontal.src = './images/logoh.png';
   logoHorizontal.id = 'logoHorizontal';
 
-  const usuario = verUsuario();
+ const usuario = verUsuario();
   console.log(usuario);
 
-  const verEmail = usuario.email;
+  //const verEmail = usuario.email;
   const greeting = document.createElement('p');
-  greeting.textContent = "Hola" +verEmail;
+  greeting.textContent = "Hola";
   greeting.id = 'titlePost';
 
   const logOut = document.createElement('img');
@@ -94,4 +80,4 @@ export const home = () => {
   divHeader.append(logoHorizontal, greeting, logOut);
   divPost.append(inputPost, questionPost, buttonPost);
   return container;
-}
+};
