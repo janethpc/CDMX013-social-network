@@ -185,7 +185,8 @@ div #divPost {
     position: relative;
     justify-content: center;
     width: 100%;
-    }
+}
+
 #titlePost { /*hola */
     position: inherit;
     color: #F1EF14;
@@ -193,7 +194,7 @@ div #divPost {
     font-size: 1.1rem;
     align-items: center;
     justify-self: center;
-    margin-top: 2rem;
+    margin-top: .5rem;
 }
 
 #questionPost {

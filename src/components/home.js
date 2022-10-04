@@ -1,5 +1,5 @@
 import { cerrarsesion } from '../lib/auth.js';
-import { savePost, getTask } from '../lib/posts.js';
+import { savePost, getTask, deletePost } from '../lib/posts.js';
 
 const tasksContainer = document.createElement('taskContainer');
 tasksContainer.id = 'taskContainer';
@@ -15,11 +15,18 @@ window.addEventListener('DOMContentLoaded', async () => {
     </section>
     <img src='./images/borrar.png' id='borrar' ></img>
     <img src='./images/hearts.png' id='heart' ></img>
-    <button id='delete' >Delete</button>
+    <button id='btnDelete' class='btnDelete' data-id='${doc.id}' >Delete</button>
     `;
-    console.log(`${doc.data()}+ 'datos de posts`);
   });
   tasksContainer.innerHTML = html;
+
+  const btnsDelete = tasksContainer.querySelectorAll('.btnDelete');
+  btnsDelete.forEach((btn) => {
+    btn.addEventListener('click', ({ target: { dataset } }) => {
+      console.log(dataset.id);
+      deletePost(dataset.id);
+    });
+  });
 });
 
 export const home = () => {
@@ -33,10 +40,6 @@ export const home = () => {
   logoHorizontal.src = './images/logoh.png';
   logoHorizontal.id = 'logoHorizontal';
 
-  const greeting = document.createElement('p');
-  greeting.textContent = 'Hola ';
-  greeting.id = 'titlePost';
-
   const logOut = document.createElement('img');
   logOut.src = './images/cerrar.png';
   logOut.id = 'logOut';
@@ -46,6 +49,10 @@ export const home = () => {
 
   const divPost = document.createElement('div');
   divPost.id = 'divPost';
+
+  const greeting = document.createElement('p');
+  greeting.textContent = 'Hola ';
+  greeting.id = 'titlePost';
 
   const questionPost = document.createElement('p');
   questionPost.textContent = '¿Quieres compartir algo?';
@@ -69,7 +76,7 @@ export const home = () => {
   divWall.appendChild(tasksContainer);
 
   container.append(divHeader, divPost, divWall);
-  divHeader.append(logoHorizontal, greeting, logOut);
-  divPost.append(inputPost, questionPost, buttonPost);
+  divHeader.append(logoHorizontal, logOut);
+  divPost.append(inputPost, greeting, questionPost, buttonPost);
   return container;
 };

@@ -6,3 +6,10 @@ describe('myFunction', () => {
     expect(typeof myFunction).toBe('function');
   });
 });
+import { filterHousesFunction, filterGenderFunction, filterSpellsFunction, sortAtoZFunction, sortZtoAFunction } from '../src/data.js';
+import datos from "./data.js";
+
+describe('filterHousesFunction', () => {
+  it('is a function', () => {
+    expect(typeof filterHousesFunction).toBe('function');
+  });
