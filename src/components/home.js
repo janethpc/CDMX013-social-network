@@ -1,13 +1,13 @@
 import { cerrarsesion, verUsuario } from '../lib/auth.js';
-import { savePost, getTask } from '../lib/posts.js';
+import { savePost, getPost } from '../lib/posts.js';
+
 
 const tasksContainer = document.createElement('taskContainer');
 tasksContainer.id = 'taskContainer';
-
 window.addEventListener('DOMContentLoaded', async () => {
-  const onSnapshot = await getTask();
-  let html = '';
-  onSnapshot.forEach((doc) => {
+const imprimirPost = getPost((querySnapshot)=>{
+  let html = "";
+  imprimirPost.forEach((doc) => {
     const task = doc.data();
     html += `
     <section id="sectionPost" class="card">
@@ -18,9 +18,27 @@ window.addEventListener('DOMContentLoaded', async () => {
     <button id='delete' >Delete</button>
     `;
     console.log(`${doc.data()}+ 'datos de posts`);
+});
+tasksContainer.innerHTML = html;
+});
+
+//window.addEventListener('DOMContentLoaded', async () => {
+  //const Snapshot = await getTask();
+  //let html = '';
+  //Snapshot.forEach((doc) => {
+    //const task = doc.data();
+    //html += `
+    //<section id="sectionPost" class="card">
+    //<p>${task.texto}</p>
+    //</section>
+    //<img src='./images/borrar.png' id='borrar' ></img>
+    //<img src='./images/hearts.png' id='heart' ></img>
+    //<button id='delete' >Delete</button>
+    /* `;
+    console.log(`${doc.data()}+ 'datos de posts`);
   });
   tasksContainer.innerHTML = html;
-});
+}); */
 
 export const home = () => {
   const container = document.createElement('div');
@@ -66,7 +84,7 @@ export const home = () => {
   buttonPost.textContent = 'Post';
   buttonPost.addEventListener('click', async () => {
     await savePost(inputPost.value);
-    location.reload();
+    //location.reload();
   });
   const divWall = document.createElement('div');
   divWall.id = 'divWall';
@@ -76,4 +94,4 @@ export const home = () => {
   divHeader.append(logoHorizontal, greeting, logOut);
   divPost.append(inputPost, questionPost, buttonPost);
   return container;
-};
+}
