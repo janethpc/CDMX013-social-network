@@ -2,6 +2,7 @@ import { onNavigate } from '../main.js';
 import {
   loginUser, loginGoogle, loginTwitter, loginGithub,
 } from '../lib/auth.js';
+// import { cerrarsesion, verUsuario } from '../lib/auth.js';
 
 export const login = () => {
   function enterHome() {
@@ -72,6 +73,13 @@ export const login = () => {
   logoGitHub.addEventListener('click', () => {
     loginGithub();
   });
+
+  // const logOut = document.createElement('img');
+  // logOut.src = './images/cerrar.png';
+  // logOut.id = 'logOut';
+  // logOut.addEventListener('click', () => {
+  // cerrarsesion();
+  // });
 
   div.append(
     logoInicio,

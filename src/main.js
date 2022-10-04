@@ -3,7 +3,7 @@ import { login } from './components/login.js';
 import { register } from './components/register.js';
 import { home } from './components/home.js';
 import { app } from './lib/config.js';
-import { observadorUser } from '../lib/auth.js';
+import { observadorUser } from './lib/auth.js';
 
 const root = document.getElementById('root');
 

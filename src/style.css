@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-
 }
 
 body {
@@ -40,7 +39,7 @@ div #divRegister {
     width: 11rem;
     height: 3.4rem;
     margin: 1em;
-    margin-top: 35rem;
+    margin-top: 30rem;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -54,7 +53,7 @@ div #divRegister {
     width: 11rem;
     height: 3.4rem;
     margin: 1rem;
-    margin-top: 55rem;
+    margin-top: 47rem;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -66,7 +65,7 @@ div #divRegister {
 #or {
     position: absolute;
     color: #F1EF14;
-    top: 32rem;
+    top: 27rem;
     font-family: 'Charmonman', cursive;
     font-size: 20px;
 }
@@ -82,7 +81,7 @@ div #divRegister {
     border-left: transparent;
     border-right: transparent;
     border-color: #FE66C4;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
 }
 
 #inputPassword {
@@ -150,7 +149,7 @@ div #divRegister {
     position: relative;
     width: 11rem;
     height: 3rem;
-    top: 14.5rem;
+    top: 10rem;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -159,61 +158,104 @@ div #divRegister {
     font-size: 25px;
 }
 
+div #header {
+    background-color: #051427 !important;
+    display: flex;
+    position: fixed !important;
+    z-index: 10;
+   justify-content: space-around;
+    width: 100%;
+    height: 70px;
+    top: 0px;
+}
+
 #logoHorizontal {
-    position:relative;
     width: 11rem;
     height: 5rem;
-    top: 0rem;
+   
 }
 
-#homeIcon {
-    display: flex;
-    justify-content: flex-end;
+#logOut {
     width: 30px;
     height: 30px;
-    top: 6rem;
+    align-self: center;
+       
+}
+div #divPost {
+    position: relative;
+    justify-content: center;
+    width: 100%;
 }
 
-#profile {
-    width: 30px;
-    height: 30px;
-    top: 6rem;
+#titlePost { /*hola */
+    position: inherit;
+    color: #F1EF14;
+    font-family: 'Charmonman', cursive;
+    font-size: 1.1rem;
+    align-items: center;
+    justify-self: center;
+    margin-top: .5rem;
 }
-#home{
-    display: grid;
-    place-items: center;
+
+#questionPost {
+    color: #FE66C4;
+    font-family: 'Charmonman', cursive;
+    font-size: 1rem;
+    top: 10rem;
+    justify-self: center;
 }
 
 #inputPost {
     position: relative;
-    top: 12rem;
+    top: 11rem;
     margin: 1rem;
     width: 15rem;
     height: 5rem;
-}
-h2 {
-    position: relative;
-    color: #F1EF14;
-    font-family: 'Charmonman', cursive;
-    font-size: 25px;
-}
-p{
-    position: relative;  
-    color: #FE66C4;
-    font-family: 'Charmonman', cursive;
-    font-size: 25px; 
-    top: 2 rem; 
+    justify-self: center;
 }
 
 #buttonPost {
     position: relative;
-    width: 11rem;
-    height: 3rem;
-    top: 14.5rem;
+    width: 5rem;
+    height: 1.5rem;
+    top: 11rem;
     background: rgba(254, 102, 196, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
     color: #F1EF14;
     font-family: 'Charmonman', cursive;
-    font-size: 25px;
+    font-size: 15px;
+    text-align: center;
+    justify-self: flex-end;
+}
+#taskContainer {
+color: white;
+font-size: 8pt;
+font-family: Arial, Helvetica, sans-serif;
+border-color: #FE66C4;
+margin: 20px;
+}
+.card {
+    width: 65%;
+    height: 100px;
+    margin: 5px;
+    color: white;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-size: 15px;
+    border-color: #FE66C4;
+    background-color: transparent;
+    margin-top: 100px;
+    border-style: double;
+}
+div #divWall {
+    display: flex;
+    margin-top: 100px;
+}
+#borrar {
+    width: 30px;
+    margin-left: 30rem;
+}
+#heart {
+    width: 30px;
+    margin-left: 30rem;
 }

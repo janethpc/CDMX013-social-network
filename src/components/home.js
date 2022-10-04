@@ -1,39 +1,64 @@
-import { cerrarsesion, verUsuario } from '../lib/auth.js';
-import { savePost } from '../lib/posts.js';
+import { cerrarsesion } from '../lib/auth.js';
+import { savePost, getTask, deletePost } from '../lib/posts.js';
+
+const tasksContainer = document.createElement('taskContainer');
+tasksContainer.id = 'taskContainer';
+
+window.addEventListener('DOMContentLoaded', async () => {
+  const onSnapshot = await getTask();
+  let html = '';
+  onSnapshot.forEach((doc) => {
+    const task = doc.data();
+    html += `
+    <section id="sectionPost" class="card">
+    <p>${task.texto}</p>
+    </section>
+    <img src='./images/borrar.png' id='borrar' ></img>
+    <img src='./images/hearts.png' id='heart' ></img>
+    <button id='btnDelete' class='btnDelete' data-id='${doc.id}' >Delete</button>
+    `;
+  });
+  tasksContainer.innerHTML = html;
+
+  const btnsDelete = tasksContainer.querySelectorAll('.btnDelete');
+  btnsDelete.forEach((btn) => {
+    btn.addEventListener('click', ({ target: { dataset } }) => {
+      console.log(dataset.id);
+      deletePost(dataset.id);
+    });
+  });
+});
 
 export const home = () => {
-  const div = document.createElement('div');
-  div.id = 'home';
+  const container = document.createElement('div');
+  container.id = 'container';
+
+  const divHeader = document.createElement('div');
+  divHeader.id = 'header';
 
   const logoHorizontal = document.createElement('img');
   logoHorizontal.src = './images/logoh.png';
   logoHorizontal.id = 'logoHorizontal';
 
-  const homeIcon = document.createElement('img');
-  homeIcon.src = './images/home1.png';
-  homeIcon.id = 'homeIcon';
-  homeIcon.addEventListener('click', () => {
+  const logOut = document.createElement('img');
+  logOut.src = './images/cerrar.png';
+  logOut.id = 'logOut';
+  logOut.addEventListener('click', () => {
     cerrarsesion();
   });
 
-  const logOut = document.createElement('img');
-  logOut.src = './images/cerrar.png';
-  logOut.id = 'profile';
+  const divPost = document.createElement('div');
+  divPost.id = 'divPost';
 
-  const usuario = verUsuario();
-  console.log(usuario);
-
-  const verEmail = usuario.email;
-
-  const greeting = document.createElement('h2');
-  greeting.textContent = `Hola ${verEmail}`;
+  const greeting = document.createElement('p');
+  greeting.textContent = 'Hola ';
   greeting.id = 'titlePost';
 
   const questionPost = document.createElement('p');
   questionPost.textContent = '¿Quieres compartir algo?';
   questionPost.id = 'questionPost';
 
-  const inputPost = document.createElement('form');
+  const inputPost = document.createElement('input');
   inputPost.className = 'inputPost';
   inputPost.placeholder = 'Escribe aqui... ';
   inputPost.id = 'inputPost';
@@ -43,10 +68,15 @@ export const home = () => {
   buttonPost.className = 'buttonPost';
   buttonPost.textContent = 'Post';
   buttonPost.addEventListener('click', async () => {
-    await savePost();
+    await savePost(inputPost.value);
+    location.reload();
   });
+  const divWall = document.createElement('div');
+  divWall.id = 'divWall';
+  divWall.appendChild(tasksContainer);
 
-  div.append(logoHorizontal, homeIcon, logOut, greeting, inputPost, questionPost, buttonPost);
-
-  return div;
+  container.append(divHeader, divPost, divWall);
+  divHeader.append(logoHorizontal, logOut);
+  divPost.append(inputPost, greeting, questionPost, buttonPost);
+  return container;
 };
