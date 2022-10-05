@@ -1,28 +1,39 @@
 import { cerrarsesion, verUsuario } from '../lib/auth.js';
+<<<<<<< HEAD
 import { savePost, getTask } from '../lib/posts.js';
+=======
+import { savePost, getPost, deletePost } from '../lib/posts.js';
+
+>>>>>>> c5562e9f85245d63507b147fbb001b69289df8bf
 
 const tasksContainer = document.createElement('taskContainer');
 tasksContainer.id = 'taskContainer';
 
-window.addEventListener('DOMContentLoaded', async () => {
-  const onSnapshot = await getTask();
-  let html = '';
-  onSnapshot.forEach((doc) => {
-    const task = doc.data();
-    html += `
-    <section id="sectionPost" class="card">
-    <p>${task.texto}</p>
-    </section>
-    <img src='./images/borrar.png' id='borrar' ></img>
+export const home = () => {
+
+  const imprimirPost = getPost((querySnapshot)=>{
+    console.log("pintado de posts");
+    let html = "";
+    querySnapshot.forEach((doc) => {
+      const task = doc.data();
+      html += `
+      <section id="sectionPost" class="card">
+      <p>${task.texto}</p>
+      </section>
+      <img src='./images/borrar.png' id='btnDelete' class='btnDelete' data-id='${doc.id}' ></img>
     <img src='./images/hearts.png' id='heart' ></img>
-    <button id='delete' >Delete</button>
     `;
-    console.log(`${doc.data()}+ 'datos de posts`);
   });
   tasksContainer.innerHTML = html;
+  const btnsDelete = tasksContainer.querySelectorAll('.btnDelete');
+  btnsDelete.forEach((btn) => {
+    btn.addEventListener('click', ({ target: { dataset } }) => {
+      console.log(dataset.id);
+      deletePost(dataset.id);
+    });
+  });
 });
-
-export const home = () => {
+ 
   const container = document.createElement('div');
   container.id = 'container';
 
@@ -33,12 +44,21 @@ export const home = () => {
   logoHorizontal.src = './images/logoh.png';
   logoHorizontal.id = 'logoHorizontal';
 
+<<<<<<< HEAD
   const usuario = verUsuario();
   console.log(usuario);
 
   const verEmail = usuario.email;
   const greeting = document.createElement('p');
   greeting.textContent = "Hola" +verEmail;
+=======
+ const usuario = verUsuario();
+  console.log(usuario);
+
+  //const verEmail = usuario.email;
+  const greeting = document.createElement('p');
+  greeting.textContent = "Hola";
+>>>>>>> c5562e9f85245d63507b147fbb001b69289df8bf
   greeting.id = 'titlePost';
 
   const logOut = document.createElement('img');
@@ -66,7 +86,6 @@ export const home = () => {
   buttonPost.textContent = 'Post';
   buttonPost.addEventListener('click', async () => {
     await savePost(inputPost.value);
-    location.reload();
   });
   const divWall = document.createElement('div');
   divWall.id = 'divWall';
