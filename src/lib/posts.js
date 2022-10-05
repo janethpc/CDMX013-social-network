@@ -1,8 +1,7 @@
 import {
-  collection, doc, addDoc, deleteDoc, onSnapshot
+  collection, doc, addDoc, deleteDoc, onSnapshot, getDoc, updateDoc,
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 import { db } from './config.js';
-
 
 export const savePost = async (text) => {
   if (text != '') {
@@ -26,3 +25,7 @@ export const getPost = (callback) => {
 };
 
 export const deletePost = (id) => deleteDoc(doc(db, 'posts', id));
+
+export const getTask = (id) => getDoc(doc(db, 'posts', id));
+
+export const updatePost = (id, newFields) => updateDoc(doc(db, 'posts', id), newFields);
