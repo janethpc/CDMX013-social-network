@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { cerrarsesion } from '../lib/auth.js';
 import { savePost, getTask, deletePost } from '../lib/posts.js';
+=======
+import { cerrarsesion, verUsuario } from '../lib/auth.js';
+import { savePost, getTask } from '../lib/posts.js';
+>>>>>>> develop
 
 const tasksContainer = document.createElement('taskContainer');
 tasksContainer.id = 'taskContainer';
@@ -39,6 +44,17 @@ export const home = () => {
   logoHorizontal.src = './images/logoh.png';
   logoHorizontal.id = 'logoHorizontal';
 
+<<<<<<< HEAD
+=======
+  const usuario = verUsuario();
+  console.log(usuario);
+
+  const verEmail = usuario.email;
+  const greeting = document.createElement('p');
+  greeting.textContent = "Hola" +verEmail;
+  greeting.id = 'titlePost';
+
+>>>>>>> develop
   const logOut = document.createElement('img');
   logOut.src = './images/cerrar.png';
   logOut.id = 'logOut';
