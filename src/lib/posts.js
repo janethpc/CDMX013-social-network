@@ -10,7 +10,6 @@ export const savePost = async (text) => {
       texto: text,
       likes: [],
       // fecha
-      // correo
     });
     console.log('Document written with ID: ', docRef);
     if (docRef.id != '') {

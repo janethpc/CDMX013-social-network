@@ -14,11 +14,14 @@ export const home = () => {
       const task = doc.data();
       html += `
       <section id="sectionPost" class="card">
+      <p>${task.user}</p>
       <p>${task.texto}</p>
       </section>
       <img src='./images/borrar.png' id='btnDelete' class='btnDelete' data-id='${doc.id}' ></img>
     <img src='./images/hearts.png' id='heart' ></img>
+    <img src='./images/editar.png' id='heart' ></img>
     `;
+    console.log(task);
   });
   tasksContainer.innerHTML = html;
   const btnsDelete = tasksContainer.querySelectorAll('.btnDelete');
