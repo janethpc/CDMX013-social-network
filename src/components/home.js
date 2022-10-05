@@ -1,9 +1,12 @@
 import { cerrarsesion, verUsuario } from '../lib/auth.js';
-import { savePost, getPost, deletePost } from '../lib/posts.js';
+import { savePost, getPost, deletePost, getTask, updatePost } from '../lib/posts.js';
 
 
 const tasksContainer = document.createElement('taskContainer');
 tasksContainer.id = 'taskContainer';
+
+let editStatus = false;
+let id =""
 
 export const home = () => {
 
@@ -14,12 +17,11 @@ export const home = () => {
       const task = doc.data();
       html += `
       <section id="sectionPost" class="card">
-      <p>${task.user}</p>
       <p>${task.texto}</p>
       </section>
       <img src='./images/borrar.png' id='btnDelete' class='btnDelete' data-id='${doc.id}' ></img>
-    <img src='./images/hearts.png' id='heart' ></img>
-    <img src='./images/editar.png' id='heart' ></img>
+    <img src='./images/hearts.png' id='heart' >${task.likes}</img>
+    <img src='./images/editar.png' id='btnEdit' class='btnEdit' data-id='${doc.id}' ></img>
     `;
     console.log(task);
   });
@@ -31,6 +33,17 @@ export const home = () => {
       deletePost(dataset.id);
     });
   });
+   /* boton editar */
+   const btnsEdit = tasksContainer.querySelectorAll('.btnEdit');
+   btnsEdit.forEach((btn) => {
+     btn.addEventListener('click', async (e) => {
+       const doc = await getTask(e.target.dataset.id);
+       const task = doc.data();
+       console.log(doc.data());
+       document.getElementById('inputPost').value = task; /*aqui se selecciona y se pinta en input */
+       editStatus = true;
+     });
+   });
 });
  
   const container = document.createElement('div');
@@ -75,8 +88,15 @@ export const home = () => {
   buttonPost.className = 'buttonPost';
   buttonPost.textContent = 'Post';
   buttonPost.addEventListener('click', async () => {
-    await savePost(inputPost.value);
+    if (!editStatus) {
+      await savePost(inputPost.value);
+    } else {
+      updatePost();
+      editStatus = false;
+    }
+    document.getElementById('inputPost').value = "";
   });
+
   const divWall = document.createElement('div');
   divWall.id = 'divWall';
   divWall.appendChild(tasksContainer);
