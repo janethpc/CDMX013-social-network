@@ -17,6 +17,7 @@ export const home = () => {
     querySnapshot.forEach((doc) => {
       const task = doc.data();
       html += `
+      <p>${task.email}</p>
       <section id="sectionPost" class="card">
       <p>${task.texto}</p>
       </section>
