@@ -7,6 +7,8 @@ tasksContainer.id = 'taskContainer';
 let editStatus = false;
 let id ="";
 
+let numberLikes = 0;
+
 export const home = () => {
 
   const imprimirPost = getPost((querySnapshot)=>{
@@ -49,15 +51,11 @@ export const home = () => {
    btnsHearts.forEach((btn) => {
     btn.addEventListener('click', async (e) => {
     const doc2 = await getTask(e.target.dataset.id); // acceder al objeto que contiene identificador especifico
-    const likesEdit = doc2.data();
-    for (let i = 0; i < likesEdit; i++) {
-      counterLikes.value = i;
-      counterLikes.textContent = counterLikes.value;
-      console.log(counterLikes.value);
-      
-      updatePost(doc2.id, { likes: counterLikes.value });
-    }
+    const likesEdit = doc2.data(); 
+    updatePost(doc2.id, { likes: likesEdit.likes+1 });
+    
     });
+    
   });
 })
  
