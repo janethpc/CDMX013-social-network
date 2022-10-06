@@ -6,7 +6,8 @@ const tasksContainer = document.createElement('taskContainer');
 tasksContainer.id = 'taskContainer';
 
 let editStatus = false;
-let id =""
+let id ="";
+let counterHearts = 0;
 
 export const home = () => {
 
@@ -18,9 +19,10 @@ export const home = () => {
       html += `
       <section id="sectionPost" class="card">
       <p>${task.texto}</p>
+      <p id="counterLikes" class="counterLikes">${task.likes}</p>
       </section>
       <img src='./images/borrar.png' id='btnDelete' class='btnDelete' data-id='${doc.id}' ></img>
-    <img src='./images/hearts.png' id='heart' >${task.likes}</img>
+    <img src='./images/hearts.png' id='heart' class='heart' data-id='${doc.id}' ></img>
     <img src='./images/editar.png' id='btnEdit' class='btnEdit' data-id='${doc.id}' ></img>
     `;
     console.log(task);
@@ -44,7 +46,29 @@ export const home = () => {
        editStatus = true;
      });
    });
-});
+   /*boton like*/
+   const btnsHearts = tasksContainer.querySelectorAll('.heart');
+   btnsHearts.forEach((btn) => {
+    btn.addEventListener('click', async (e) => {
+    const doc2 = await getTask(e.target.dataset.id); // acceder al objeto que contiene identificador especifico
+    const likesEdit = doc2.data();
+    if (counterHearts === 0) {
+      counterLikes.value = likesEdit.likes + 1;
+      counterLikes.textContent = counterLikes.value;
+      console.log(counterLikes.value);
+      counterHearts = 1;
+      updatePost(doc2.id, { likes: counterLikes.value });
+    } else if (counterHearts !== 0) {
+      counterLikes.value = likesEdit.likes - 1;
+      counterLikes.textContent = counterLikes.value;
+      console.log(counterLikes.value);
+      updatePost(doc2.id, { likes: counterLikes.value });
+      counterHearts = 0;
+      console.log(likesEdit)
+    }
+    });
+  });
+})
  
   const container = document.createElement('div');
   container.id = 'container';

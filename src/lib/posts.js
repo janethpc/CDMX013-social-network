@@ -1,15 +1,20 @@
 import {
-  collection, doc, addDoc, deleteDoc, onSnapshot, getDoc, updateDoc
+  collection, doc, addDoc, deleteDoc, onSnapshot, getDoc, updateDoc,
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
+
+import {getAuth} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { db } from './config.js';
 
 
 export const savePost = async (text) => {
   if (text != '') {
+    const auth = getAuth();
+    const user = auth.currentUser;
     const docRef = await addDoc(collection(db, 'posts'), {
       texto: text,
+      uid: user.uid,
+      email: user.email, 
       likes: [],
-      // fecha
     });
     console.log('Document written with ID: ', docRef);
     if (docRef.id != '') {
