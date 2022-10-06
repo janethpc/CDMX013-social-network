@@ -1,13 +1,11 @@
 import { cerrarsesion, verUsuario } from '../lib/auth.js';
 import { savePost, getPost, deletePost, getTask, updatePost } from '../lib/posts.js';
 
-
 const tasksContainer = document.createElement('taskContainer');
 tasksContainer.id = 'taskContainer';
 
 let editStatus = false;
 let id ="";
-let counterHearts = 0;
 
 export const home = () => {
 
@@ -19,10 +17,10 @@ export const home = () => {
       html += `
       <section id="sectionPost" class="card">
       <p>${task.texto}</p>
-      <p id="counterLikes" class="counterLikes">${task.likes}</p>
       </section>
       <img src='./images/borrar.png' id='btnDelete' class='btnDelete' data-id='${doc.id}' ></img>
     <img src='./images/hearts.png' id='heart' class='heart' data-id='${doc.id}' ></img>
+    <p id="counterLikes" class="counterLikes">${task.likes}</p>
     <img src='./images/editar.png' id='btnEdit' class='btnEdit' data-id='${doc.id}' ></img>
     `;
     console.log(task);
@@ -37,34 +35,27 @@ export const home = () => {
   });
    /* boton editar */
    const btnsEdit = tasksContainer.querySelectorAll('.btnEdit');
-   btnsEdit.forEach((btn) => {
-     btn.addEventListener('click', async (e) => {
-       const doc = await getTask(e.target.dataset.id);
-       const task = doc.data();
-       console.log(doc.data());
-       document.getElementById('inputPost').value = task; /*aqui se selecciona y se pinta en input */
-       editStatus = true;
-     });
-   });
+    btnsEdit.forEach((btn) => {
+      btn.addEventListener('click', async (e) => {
+        const doc = await getTask(e.target.dataset.id);
+        const postEdit = doc.data();
+        inputPost.value = postEdit.texto;
+        editStatus = true;
+        id = doc.id;
+      });
+    });
    /*boton like*/
    const btnsHearts = tasksContainer.querySelectorAll('.heart');
    btnsHearts.forEach((btn) => {
     btn.addEventListener('click', async (e) => {
     const doc2 = await getTask(e.target.dataset.id); // acceder al objeto que contiene identificador especifico
     const likesEdit = doc2.data();
-    if (counterHearts === 0) {
-      counterLikes.value = likesEdit.likes + 1;
+    for (let i = 0; i < likesEdit; i++) {
+      counterLikes.value = i;
       counterLikes.textContent = counterLikes.value;
       console.log(counterLikes.value);
-      counterHearts = 1;
+      
       updatePost(doc2.id, { likes: counterLikes.value });
-    } else if (counterHearts !== 0) {
-      counterLikes.value = likesEdit.likes - 1;
-      counterLikes.textContent = counterLikes.value;
-      console.log(counterLikes.value);
-      updatePost(doc2.id, { likes: counterLikes.value });
-      counterHearts = 0;
-      console.log(likesEdit)
     }
     });
   });
@@ -85,7 +76,7 @@ export const home = () => {
 
   //const verEmail = usuario.email;
   const greeting = document.createElement('p');
-  greeting.textContent = "Hola";
+  greeting.textContent = "Hi, do you want to share something?";
   greeting.id = 'titlePost';
 
   const logOut = document.createElement('img');
@@ -98,13 +89,9 @@ export const home = () => {
   const divPost = document.createElement('div');
   divPost.id = 'divPost';
 
-  const questionPost = document.createElement('p');
-  questionPost.textContent = '¿Quieres compartir algo?';
-  questionPost.id = 'questionPost';
-
   const inputPost = document.createElement('input');
   inputPost.className = 'inputPost';
-  inputPost.placeholder = 'Escribe aqui... ';
+  inputPost.placeholder = 'Write here... ';
   inputPost.id = 'inputPost';
 
   const buttonPost = document.createElement('button');
@@ -115,10 +102,11 @@ export const home = () => {
     if (!editStatus) {
       await savePost(inputPost.value);
     } else {
-      updatePost();
+      updatePost(id, {texto: inputPost.value});
       editStatus = false;
+      buttonPost.src = './images/editar.png';
     }
-    document.getElementById('inputPost').value = "";
+    document.querySelector('.inputPost').value = '';
   });
 
   const divWall = document.createElement('div');
@@ -127,6 +115,6 @@ export const home = () => {
 
   container.append(divHeader, divPost, divWall);
   divHeader.append(logoHorizontal, greeting, logOut);
-  divPost.append(inputPost, questionPost, buttonPost);
+  divPost.append(inputPost, buttonPost);
   return container;
 };
