@@ -9,6 +9,8 @@ tasksContainer.id = 'taskContainer';
 let editStatus = false;
 let id = '';
 
+let numberLikes = 0;
+
 export const home = () => {
   const imprimirPost = getPost((querySnapshot) => {
     console.log('pintado de posts');
@@ -16,6 +18,7 @@ export const home = () => {
     querySnapshot.forEach((doc) => {
       const task = doc.data();
       html += `
+      <p>${task.email}</p>
       <section id="sectionPost" class="card">
       <p>${task.texto}</p>
       </section>
@@ -45,23 +48,19 @@ export const home = () => {
         id = doc.id;
       });
     });
-    /* boton like */
-    const btnsHearts = tasksContainer.querySelectorAll('.heart');
-    btnsHearts.forEach((btn) => {
-      btn.addEventListener('click', async (e) => {
-        const doc2 = await getTask(e.target.dataset.id); // acceder al objeto que contiene identificador especifico
-        const likesEdit = doc2.data();
-        for (let i = 0; i < likesEdit; i++) {
-          counterLikes.value = i;
-          counterLikes.textContent = counterLikes.value;
-          console.log(counterLikes.value);
-
-          updatePost(doc2.id, { likes: counterLikes.value });
-        }
-      });
+   /*boton like*/
+   const btnsHearts = tasksContainer.querySelectorAll('.heart');
+   btnsHearts.forEach((btn) => {
+    btn.addEventListener('click', async (e) => {
+    const doc2 = await getTask(e.target.dataset.id); // acceder al objeto que contiene identificador especifico
+    const likesEdit = doc2.data(); 
+    updatePost(doc2.id, { likes: likesEdit.likes+1 });
+    
     });
+    
   });
-
+})
+ 
   const container = document.createElement('div');
   container.id = 'container';
 
