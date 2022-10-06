@@ -182,13 +182,12 @@ div #header {
        
 }
 div #divPost {
-    position: relative;
+    position: fixed;
     justify-content: center;
     width: 100%;
 }
 
 #titlePost { /*hola */
-    position: inherit;
     color: #F1EF14;
     font-family: 'Charmonman', cursive;
     font-size: 1.1rem;
@@ -197,16 +196,7 @@ div #divPost {
     margin-top: .5rem;
 }
 
-#questionPost {
-    color: #FE66C4;
-    font-family: 'Charmonman', cursive;
-    font-size: 1rem;
-    top: 10rem;
-    justify-self: center;
-}
-
 #inputPost {
-    position: relative;
     top: 11rem;
     margin: 1rem;
     width: 15rem;
@@ -215,7 +205,6 @@ div #divPost {
 }
 
 #buttonPost {
-    position: relative;
     width: 5rem;
     height: 1.5rem;
     top: 11rem;
@@ -253,13 +242,13 @@ div #divWall {
 }
 #btnDelete {
     width: 30px;
-    margin-left: 30rem;
+    margin-left: 13rem;
 }
 #heart {
     width: 30px;
-    margin-left: 30rem;
+    margin-left: 5rem;
 }
 #btnEdit{
     width: 30px;
-    margin-left: 30rem;
+    margin-left: 9rem;
 }
