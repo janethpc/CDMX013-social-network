@@ -16,7 +16,7 @@ export const register = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
-        alert('nel carnal no te pueder registrar');
+        alert('Ingrese los datos correctamente');
       });
   }
 
