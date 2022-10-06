@@ -1,13 +1,12 @@
 import { cerrarsesion, verUsuario } from '../lib/auth.js';
 import {
-  savePost, getPost, deletePost, getTask, updatePost
+  savePost, getPost, deletePost, getTask, updatePost,
 } from '../lib/posts.js';
 
 const tasksContainer = document.createElement('taskContainer');
 tasksContainer.id = 'taskContainer';
 
 let editStatus = false;
-
 let id =""
 
 export const home = () => {
@@ -33,16 +32,15 @@ export const home = () => {
         deletePost(dataset.id);
       });
     });
-
     /* boton editar */
     const btnsEdit = tasksContainer.querySelectorAll('.btnEdit');
     btnsEdit.forEach((btn) => {
       btn.addEventListener('click', async (e) => {
         const doc = await getTask(e.target.dataset.id);
-        const task = doc.data();
-        console.log(doc.data());
-        document.getElementById('inputPost').value = task; /*aqui se selecciona y se pinta en input */
+        const postEdit = doc.data();
+        inputPost.value = postEdit.texto;
         editStatus = true;
+        id = doc.id;
       });
     });
   });
@@ -89,14 +87,14 @@ export const home = () => {
   buttonPost.className = 'buttonPost';
   buttonPost.textContent = 'Post';
   buttonPost.addEventListener('click', async () => {
-    document.getElementById('inputPost').value = "";
     if (!editStatus) {
       await savePost(inputPost.value);
     } else {
-      updatePost();
+      updatePost(id, {texto: inputPost.value});
       editStatus = false;
+      buttonPost.src = './images/editar.png';
     }
-    inputPost.reset();
+    document.querySelector('.inputPost').value = '';
   });
 
   const divWall = document.createElement('div');
