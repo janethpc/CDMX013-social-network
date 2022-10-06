@@ -1,4 +1,5 @@
 import { welcome } from './components/welcome.js';
+
 import { login } from './components/login.js';
 import { register } from './components/register.js';
 import { home } from './components/home.js';
@@ -15,11 +16,20 @@ const routes = {
 };
 
 export const onNavigate = (pathname) => {
+
+
+const routes = {
+  '/': welcome,
+};
+
+const onNavigate = (pathname) => {
+
   window.history.pushState(
     {},
     pathname,
     window.location.origin + pathname,
   );
+
   root.removeChild(root.firstChild);
   root.appendChild(routes[pathname]());
 };
@@ -31,6 +41,9 @@ observadorUser();
 window.onpopstate = () => {
   root.removeChild(root.firstChild);
   root.append(component());
+ root.appendChild(routes[pathname]());
+
+
 };
 
 console.log(app);

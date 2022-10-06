@@ -2,7 +2,7 @@ import { onNavigate } from '../main.js';
 
 export const welcome = () => {
   const div = document.createElement('div');
-  div.id = 'welcome';
+ div.id = 'welcome';
 
   const logoInicio = document.createElement('img');
   logoInicio.id = 'logo';
@@ -28,6 +28,17 @@ export const welcome = () => {
     onNavigate('/register');
   });
   div.append(logoInicio, optionOr, buttonLogin, buttonRegister);
+
+  const buttonLogin = document.createElement('button');
+  buttonLogin.id = 'logIn';
+  const buttonRegister = document.createElement('button');
+  buttonRegister.id = 'register';
+
+  buttonLogin.textContent = 'Log In';
+  buttonRegister.textContent = 'Sign In';
+
+  div.append(buttonLogin, buttonRegister);
+
 
   return div;
 };
