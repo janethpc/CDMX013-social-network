@@ -9,7 +9,7 @@ tasksContainer.id = 'taskContainer';
 let editStatus = false;
 let id = '';
 
-const numberLikes = 1;
+const numberLikes = 0;
 
 export const home = () => {
   const imprimirPost = getPost((querySnapshot) => {
@@ -119,3 +119,8 @@ export const home = () => {
 
   return container;
 };
+
+const contando = function() {
+numberLikes ++;
+pintarLikes.textContent= numberLikes;
+}
