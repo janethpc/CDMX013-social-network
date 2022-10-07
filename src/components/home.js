@@ -9,7 +9,8 @@ tasksContainer.id = 'taskContainer';
 let editStatus = false;
 let id = '';
 
-const numberLikes = 0;
+const numberLikes = 1;
+
 
 export const home = () => {
   const imprimirPost = getPost((querySnapshot) => {
@@ -19,13 +20,14 @@ export const home = () => {
       const task = doc.data();
       html += `
       <section id="sectionPost" class="card">
-      <p>${task.email}</p>
-      <p>${task.texto}</p>
-      </section>
+      <p1>${task.email}</p1>
+      <h1>${task.texto}</h1>
+      
       <img src='./images/borrar.png' id='btnDelete' class='btnDelete' data-id='${doc.id}' ></img>
+      <img src='./images/editar.png' id='btnEdit' class='btnEdit' data-id='${doc.id}' ></img>
     <img src='./images/hearts.png' id='heart' class='heart' data-id='${doc.id}' 
-    <p id="counterLikes" class="counterLikes">${task.likes}</p></img>
-    <img src='./images/editar.png' id='btnEdit' class='btnEdit' data-id='${doc.id}' ></img>
+    <p id="counterLikes" class="counterLikes">${task.likes}</p> 
+    </section>
     `;
       console.log(task);
     });
@@ -83,14 +85,15 @@ export const home = () => {
     cerrarsesion();
   });
 
-  const divPost = document.createElement('div');
-  divPost.id = 'divPost';
+  const greeting = document.createElement('p');
+  greeting.textContent = 'Hi, do you want to share something?';
+  greeting.id = 'titlePost';
 
   const greeting = document.createElement('p');
   greeting.textContent = 'Hi, do you want to share something?';
   greeting.id = 'titlePost';
 
-  const inputPost = document.createElement('input');
+  const inputPost = document.createElement('textarea');
   inputPost.className = 'inputPost';
   inputPost.placeholder = 'Write here... ';
   inputPost.id = 'inputPost';
@@ -118,9 +121,5 @@ export const home = () => {
   divHeader.append(logoHorizontal, logOut, greeting, inputPost, buttonPost);
 
   return container;
-};
 
-const contando = function() {
-numberLikes ++;
-pintarLikes.textContent= numberLikes;
-}
+};
