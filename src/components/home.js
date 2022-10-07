@@ -18,8 +18,8 @@ export const home = () => {
     querySnapshot.forEach((doc) => {
       const task = doc.data();
       html += `
-      <p>${task.email}</p>
       <section id="sectionPost" class="card">
+      <p>${task.email}</p>
       <p>${task.texto}</p>
       </section>
       <img src='./images/borrar.png' id='btnDelete' class='btnDelete' data-id='${doc.id}' ></img>
@@ -55,8 +55,9 @@ export const home = () => {
         const doc2 = await getTask(e.target.dataset.id);
         const likesEdit = doc2.data();
         const numberLikes = likesEdit.likes;
-        console.log(`${numberLikes.length + 1} aqui contamos`);
-        updatePost(doc2.id, { likes: likesEdit.likes + 1 });
+        const newLikes = numberLikes.length + 1;
+        console.log(newLikes);
+        updatePost(doc2.id, { likes: newLikes });
       });
     });
   });
