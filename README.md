@@ -34,7 +34,7 @@ ___
 
 La elección del nombre fue el siguiente paso a seguir, nos decidimos por **PARTY GIRLS**, pensando en lo atractivo del mismo y la facilidad para recordarlo, quedándose en la mente de nuestros miembros. El slogan **_"Best wings & drinks"_**, nos da una idea de la finalidad de esta red social, inspirando asi los primeras imagenes de los que seria la esencia de nuestra red social, los logos.
 
-![Logo](src\Images\logo5.png)
+<center><img src= src\Images\logo5.png)></center>
 
 
 ___
