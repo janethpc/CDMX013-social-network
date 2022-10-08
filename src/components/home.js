@@ -11,6 +11,7 @@ let id = '';
 
 const numberLikes = 1;
 
+
 export const home = () => {
   const imprimirPost = getPost((querySnapshot) => {
     console.log('pintado de posts');
@@ -26,7 +27,6 @@ export const home = () => {
       <img src='./images/editar.png' id='btnEdit' class='btnEdit' data-id='${doc.id}' ></img>
     <img src='./images/hearts.png' id='heart' class='heart' data-id='${doc.id}' 
     <p id="counterLikes" class="counterLikes">${task.likes}</p> 
-
     </section>
     `;
       console.log(task);
@@ -89,6 +89,10 @@ export const home = () => {
   greeting.textContent = 'Hi, do you want to share something?';
   greeting.id = 'titlePost';
 
+  const greeting = document.createElement('p');
+  greeting.textContent = 'Hi, do you want to share something?';
+  greeting.id = 'titlePost';
+
   const inputPost = document.createElement('textarea');
   inputPost.className = 'inputPost';
   inputPost.placeholder = 'Write here... ';
@@ -117,4 +121,5 @@ export const home = () => {
   divHeader.append(logoHorizontal, logOut, greeting, inputPost, buttonPost);
 
   return container;
+
 };
