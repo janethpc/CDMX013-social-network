@@ -9,7 +9,7 @@ tasksContainer.id = 'taskContainer';
 let editStatus = false;
 let id = '';
 
-let numberLikes = 0;
+const numberLikes = 1;
 
 export const home = () => {
   const imprimirPost = getPost((querySnapshot) => {
@@ -18,14 +18,16 @@ export const home = () => {
     querySnapshot.forEach((doc) => {
       const task = doc.data();
       html += `
-      <p>${task.email}</p>
       <section id="sectionPost" class="card">
-      <p>${task.texto}</p>
-      </section>
+      <p1>${task.email}</p1>
+      <h1>${task.texto}</h1>
+      
       <img src='./images/borrar.png' id='btnDelete' class='btnDelete' data-id='${doc.id}' ></img>
-    <img src='./images/hearts.png' id='heart' class='heart' data-id='${doc.id}' ></img>
-    <p id="counterLikes" class="counterLikes">${task.likes}</p>
-    <img src='./images/editar.png' id='btnEdit' class='btnEdit' data-id='${doc.id}' ></img>
+      <img src='./images/editar.png' id='btnEdit' class='btnEdit' data-id='${doc.id}' ></img>
+    <img src='./images/hearts.png' id='heart' class='heart' data-id='${doc.id}' 
+    <p id="counterLikes" class="counterLikes">${task.likes}</p> 
+
+    </section>
     `;
       console.log(task);
     });
@@ -48,19 +50,20 @@ export const home = () => {
         id = doc.id;
       });
     });
-   /*boton like*/
-   const btnsHearts = tasksContainer.querySelectorAll('.heart');
-   btnsHearts.forEach((btn) => {
-    btn.addEventListener('click', async (e) => {
-    const doc2 = await getTask(e.target.dataset.id); // acceder al objeto que contiene identificador especifico
-    const likesEdit = doc2.data(); 
-    updatePost(doc2.id, { likes: likesEdit.likes+1 });
-    
+    /* boton like */
+    const btnsHearts = tasksContainer.querySelectorAll('.heart');
+    btnsHearts.forEach((btn) => {
+      btn.addEventListener('click', async (e) => {
+        const doc2 = await getTask(e.target.dataset.id);
+        const likesEdit = doc2.data();
+        const numberLikes = likesEdit.likes;
+        const newLikes = numberLikes.length + 1;
+        console.log(newLikes);
+        updatePost(doc2.id, { likes: newLikes });
+      });
     });
-    
   });
-})
- 
+
   const container = document.createElement('div');
   container.id = 'container';
 
@@ -82,14 +85,11 @@ export const home = () => {
     cerrarsesion();
   });
 
-  const divPost = document.createElement('div');
-  divPost.id = 'divPost';
-
   const greeting = document.createElement('p');
   greeting.textContent = 'Hi, do you want to share something?';
   greeting.id = 'titlePost';
 
-  const inputPost = document.createElement('input');
+  const inputPost = document.createElement('textarea');
   inputPost.className = 'inputPost';
   inputPost.placeholder = 'Write here... ';
   inputPost.id = 'inputPost';
@@ -113,8 +113,8 @@ export const home = () => {
   divWall.id = 'divWall';
   divWall.appendChild(tasksContainer);
 
-  container.append(divHeader, divPost, divWall);
-  divHeader.append(logoHorizontal, logOut);
-  divPost.append(greeting, inputPost, buttonPost);
+  container.append(divHeader, divWall);
+  divHeader.append(logoHorizontal, logOut, greeting, inputPost, buttonPost);
+
   return container;
 };
