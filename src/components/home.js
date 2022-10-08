@@ -89,10 +89,6 @@ export const home = () => {
   greeting.textContent = 'Hi, do you want to share something?';
   greeting.id = 'titlePost';
 
-  const greeting = document.createElement('p');
-  greeting.textContent = 'Hi, do you want to share something?';
-  greeting.id = 'titlePost';
-
   const inputPost = document.createElement('textarea');
   inputPost.className = 'inputPost';
   inputPost.placeholder = 'Write here... ';
