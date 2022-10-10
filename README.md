@@ -40,6 +40,8 @@ La elección del nombre fue el siguiente paso a seguir, nos decidimos por **PART
 "
 <center><img src="src\Images\lfr.PNG"></center>
 
+![logo](src\Images\lfr.PNG)
+
 Haciendo uso de la memoria colectiva en donde viven los letreros de luz neon, fueron seleccionados cuidasamente la paleta de colores y fuentes que transporten al usuario a una experiencia de fiesta nocturna. 
 
 Con las ideas bien definidas y siempre inclinadas a la satisfaccion de las necesidades del usuario se procede a la realización del diseño de un prototipo de alta fidelidad en la plataforma [**_FIGMA_**](https://www.figma.com/file/4G4h6C6a3X9j8LDKX16AcE/Social-Network) en el cual se piensa principalmente en que el usuario pueda tener una interacción sencilla con la interfaz final del producto. 
