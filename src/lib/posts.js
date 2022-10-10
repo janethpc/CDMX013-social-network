@@ -5,19 +5,18 @@ import {
 import {getAuth} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { db } from './config.js';
 
-
 export const savePost = async (text) => {
-  if (text != '') {
+  if (text !== '') {
     const auth = getAuth();
     const user = auth.currentUser;
     const docRef = await addDoc(collection(db, 'posts'), {
       texto: text,
       uid: user.uid,
-      email: user.email, 
-      likes: [],
+      email: user.email,
+      likes: 0,
     });
     console.log('Document written with ID: ', docRef);
-    if (docRef.id != '') {
+    if (docRef.id !== '') {
       console.log('se guardo');
     }
   } else {

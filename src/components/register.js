@@ -8,7 +8,7 @@ export const register = () => {
     registerUser(valueEmail, password).then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      alert('usuario registrado correctamente');
+      alert('Successfully Registered User');
       console.log(user);
       // ...
     })
@@ -16,7 +16,7 @@ export const register = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
-        alert('Ingrese los datos correctamente');
+        alert('Invalid data');
       });
   }
 
@@ -39,7 +39,7 @@ export const register = () => {
   inputPassword.id = 'inputPassword';
   inputPassword.setAttribute('type', 'password');
 
-  logoInicio.src = './images/logo5.png';
+  logoInicio.src = './Images/logo5.png';
   buttonLoginOne.textContent = 'Create acount';
   buttonBack.textContent = 'Back';
   inputEmail.placeholder = 'Email';

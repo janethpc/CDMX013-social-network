@@ -2,7 +2,6 @@ import { onNavigate } from '../main.js';
 import {
   loginUser, loginGoogle, loginTwitter, loginGithub,
 } from '../lib/auth.js';
-// import { cerrarsesion, verUsuario } from '../lib/auth.js';
 
 export const login = () => {
   function enterHome() {
@@ -13,18 +12,21 @@ export const login = () => {
       const user = userCredential.user;
       onNavigate('/home');
       console.log(user);
-      // ...
     })
       .catch((error) => {
+      /*  const divModal = document.createElement('modal');
+        divModal.id = 'divModal';
+        divModal.className = 'divModal';*/
+
         const errorCode = error.code;
         const errorMessage = error.message;
-        // ..
-        alert('Contraseña erronea');
+      alert('Invalid Password');
       });
   }
 
   const div = document.createElement('div');
   div.id = 'divLogin';
+
 
   const logoInicio = document.createElement('img');
   logoInicio.id = 'logo';
@@ -51,13 +53,13 @@ export const login = () => {
   const logoGitHub = document.createElement('img');
   logoGitHub.id = 'logoGitHub';
 
-  logoInicio.src = './images/logo5.png';
+  logoInicio.src = './Images/logo5.png';
   buttonLoginOne.textContent = 'Log In';
   inputUsername.placeholder = 'Email';
   inputPassword.placeholder = 'Password';
-  logoGoogle.src = './images/btn_google.png';
-  logoTwitter.src = './images/btn_twitter.png';
-  logoGitHub.src = './images/git.png';
+  logoGoogle.src = './Images/btn_google.png';
+  logoTwitter.src = './Images/btn_twitter.png';
+  logoGitHub.src = './Images/git.png';
   optionSignAs.textContent = 'Or Sign As ..';
 
   buttonLoginOne.addEventListener('click', () => {
@@ -73,22 +75,6 @@ export const login = () => {
   logoGitHub.addEventListener('click', () => {
     loginGithub();
   });
-
-  //const usuario = verUsuario();
-  //console.log(usuario);
-
-  //const verEmail = usuario.email;
-
-  //const greeting = document.createElement('h2');
-  //greeting.textContent = `Hola , ${verEmail}`;
-  //greeting.id = 'titlePost';
-
-  //const logOut = document.createElement('img');
-  //logOut.src = './images/cerrar.png';
-  //logOut.id = 'logOut';
-  //logOut.addEventListener('click', () => {
-    //cerrarsesion();
-  //});
 
   div.append(
     logoInicio,
