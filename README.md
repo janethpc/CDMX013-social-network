@@ -1,6 +1,6 @@
 # **_Party Girls Social Network_**
 
-Te presentamos [**_Party Girls_**](), una red social donde podrás encontrar y publicar las mejores recomendaciones de _alitas y bebidas_, porque somos **_"Borrachas pero buenas muchachas"_**.
+Te presentamos [**_Party Girls_**](https://party-girls-2022.web.app), una red social donde podrás encontrar y publicar las mejores recomendaciones de _alitas y bebidas_, porque somos **_"Borrachas pero buenas muchachas"_**.
 
 <center><img src="src\Images\Mi proyecto.png"></center>
 
@@ -46,6 +46,8 @@ Con las ideas bien definidas y siempre inclinadas a la satisfaccion de las neces
 
 <center><img src=src\Images\Figma.PNG></center>
 
+
+Se penso en el concepto de [**_Mobile First_**](https://mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/), por lo que nuestro diseño y desarrollo parte de como se ve y funciona la aplicacion en un dispositivio movil. 
 ___
 
 ## **4. App Web SPA**
@@ -53,6 +55,10 @@ ___
 Uno de los objetivos del proyecto era crear una [**_Single Page Application (SPA)_**](https://es.wikipedia.org/wiki/Single-page_application#Frameworks_de_JavaScript), en la que todos recursos se cargan dinámicamente con el propósito de brindar una mejor experiencia al usuario.
 
 El siguiente objetivo consistía en permitir a la usuarias , darse de alta y loguearse, teniendo la opción de realizarlo directamente en *nuestro formulario* o haciendo uso de sus cuentas de **_Google, Twitter o GitHub_**. Para lograr esto se hizo uso del [**_SDK de Firebase Authentication (Auth)_**](https://firebase.google.com/docs/auth), la cual nos permite la creación de una base de datos y el fácil acceso a la misma, logrando que nuestros usuarios puedan guardar la informacion de su usuario para logearse cuando ellos quieran y revisar sus recomendaciones pasadas.
+
+Otro objetivo principal era el conseguir que nuestros usuarios pudieran visualizar un muro, en el cual pudieran **publicar** sus recomendaciones, y no solo eso, si no tambien permitirle, dar **like** y visualizar **cuantos likes** tiene cierta publicación, **eliminar** una publicacion especifica, **editar** sus recomendaciones por si cambio de parecer. Para lo cual, hechamos uso de las herramientas proporcionadas por **firebase**, implementando **Cloud Firestore** a fin de poder almacenar y sincronizar los datos de los usuarios. 
+
+<center><img src="src\Images\Post.PNG"></center>
 
 
 
