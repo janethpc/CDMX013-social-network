@@ -25,6 +25,7 @@ export const home = () => {
       <img src='./Images/editar.png' id='btnEdit' class='btnEdit' data-id='${doc.id}' ></img>
     <img src='./Images/hearts.png' id='heart' class='heart' data-id='${doc.id}' 
     <p id="counterLikes" class="counterLikes">${task.likes}</p> 
+    
 
     </section>
     `;
