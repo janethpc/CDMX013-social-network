@@ -9,9 +9,8 @@ tasksContainer.id = 'taskContainer';
 let editStatus = false;
 let id = '';
 
-const numberLikes = 1;
-
 export const home = () => {
+  //almacena pintado de post y eventos relacionados con las interacciones del usuario con el muro l:14, l:65;
   const imprimirPost = getPost((querySnapshot) => {
     console.log('pintado de posts');
     let html = '';
@@ -22,14 +21,15 @@ export const home = () => {
       <p1>${task.email}</p1>
       <h1>${task.texto}</h1>
       
-      <img src='./images/borrar.png' id='btnDelete' class='btnDelete' data-id='${doc.id}' ></img>
-      <img src='./images/editar.png' id='btnEdit' class='btnEdit' data-id='${doc.id}' ></img>
-    <img src='./images/hearts.png' id='heart' class='heart' data-id='${doc.id}' 
+      <img src='./Images/borrar.png' id='btnDelete' class='btnDelete' data-id='${doc.id}' ></img>
+      <img src='./Images/editar.png' id='btnEdit' class='btnEdit' data-id='${doc.id}' ></img>
+    <img src='./Images/hearts.png' id='heart' class='heart' data-id='${doc.id}' 
     <p id="counterLikes" class="counterLikes">${task.likes}</p> 
+    
 
     </section>
     `;
-      console.log(task);
+      console.log(task); //task recupera la coleción almacenada en firestore
     });
     tasksContainer.innerHTML = html;
     const btnsDelete = tasksContainer.querySelectorAll('.btnDelete');
@@ -55,9 +55,10 @@ export const home = () => {
     btnsHearts.forEach((btn) => {
       btn.addEventListener('click', async (e) => {
         const doc2 = await getTask(e.target.dataset.id);
-        const likesEdit = doc2.data();
-        const numberLikes = likesEdit.likes;
-        const newLikes = numberLikes.length + 1;
+        const post = doc2.data();
+        console.log("probando likes", post );
+
+        const newLikes = post.likes + 1;
         console.log(newLikes);
         updatePost(doc2.id, { likes: newLikes });
       });
@@ -71,7 +72,7 @@ export const home = () => {
   divHeader.id = 'header';
 
   const logoHorizontal = document.createElement('img');
-  logoHorizontal.src = './images/logoh.png';
+  logoHorizontal.src = './Images/logoh.png';
   logoHorizontal.id = 'logoHorizontal';
 
   const usuario = verUsuario();
@@ -79,7 +80,7 @@ export const home = () => {
 
   // const verEmail = usuario.email;
   const logOut = document.createElement('img');
-  logOut.src = './images/cerrar.png';
+  logOut.src = './Images/cerrar.png';
   logOut.id = 'logOut';
   logOut.addEventListener('click', () => {
     cerrarsesion();
@@ -98,13 +99,13 @@ export const home = () => {
   buttonPost.id = 'buttonPost';
   buttonPost.className = 'buttonPost';
   buttonPost.textContent = 'Post';
-  buttonPost.addEventListener('click', async () => {
+  buttonPost.addEventListener('click', async () => { //asigna evento al boton para salvar el post
     if (!editStatus) {
       await savePost(inputPost.value);
     } else {
       updatePost(id, { texto: inputPost.value });
       editStatus = false;
-      buttonPost.src = './images/editar.png';
+      buttonPost.src = './Images/editar.png';
     }
     document.querySelector('.inputPost').value = '';
   });
