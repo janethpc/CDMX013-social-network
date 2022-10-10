@@ -40,7 +40,6 @@ La elección del nombre fue el siguiente paso a seguir, nos decidimos por **PART
 "
 <center><img src="src\Images\lfr.PNG"></center>
 
-![logo](src\Images\lfr.PNG)
 
 Haciendo uso de la memoria colectiva en donde viven los letreros de luz neon, fueron seleccionados cuidasamente la paleta de colores y fuentes que transporten al usuario a una experiencia de fiesta nocturna. 
 
