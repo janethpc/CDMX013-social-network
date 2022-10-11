@@ -7,7 +7,7 @@ import {
   TwitterAuthProvider,
   GithubAuthProvider,
   onAuthStateChanged,
-  signOut
+  signOut,
 }
   from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 
@@ -93,14 +93,14 @@ export function observadorUser() {
       // https://firebase.google.com/docs/reference/js/firebase.User
       const uid = user.uid;
       const email = user.email;
-      console.log('Usuario Activo', uid, email)
+      console.log('Usuario Activo', uid, email);
       // ...
     } else {
       // User is signed out
       // ...
     }
   });
-};
+}
 
 export function verUsuario() {
   const user = auth.currentUser;
