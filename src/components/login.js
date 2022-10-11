@@ -16,17 +16,16 @@ export const login = () => {
       .catch((error) => {
       /*  const divModal = document.createElement('modal');
         divModal.id = 'divModal';
-        divModal.className = 'divModal';*/
+        divModal.className = 'divModal'; */
 
         const errorCode = error.code;
         const errorMessage = error.message;
-      alert('Invalid Password');
+        alert('Invalid Password');
       });
   }
 
   const div = document.createElement('div');
   div.id = 'divLogin';
-
 
   const logoInicio = document.createElement('img');
   logoInicio.id = 'logo';
@@ -84,7 +83,7 @@ export const login = () => {
     logoGoogle,
     logoTwitter,
     logoGitHub,
-    optionSignAs
+    optionSignAs,
   );
 
   return div;

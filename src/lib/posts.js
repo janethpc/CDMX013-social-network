@@ -17,10 +17,10 @@ export const savePost = async (text) => {
     });
     console.log('Document written with ID: ', docRef);
     if (docRef.id !== '') {
-      console.log('se guardo');
+      console.log('Your post was saved');
     }
   } else {
-    console.error('Ojoo checa tu text! ');
+    console.error('Check your text please');
   }
 };
 

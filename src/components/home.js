@@ -23,8 +23,8 @@ export const home = () => {
       
       <img src='./Images/borrar.png' id='btnDelete' class='btnDelete' data-id='${doc.id}' ></img>
       <img src='./Images/editar.png' id='btnEdit' class='btnEdit' data-id='${doc.id}' ></img>
-    <img src='./Images/hearts.png' id='heart' class='heart' data-id='${doc.id}' 
-    <p id="counterLikes" class="counterLikes">${task.likes}</p> 
+      <img src='./Images/hearts.png' id='heart' class='heart' data-id='${doc.id}' >
+      <p id="counterLikes" class="counterLikes">${task.likes}</p> </img>
     
 
     </section>
@@ -56,7 +56,7 @@ export const home = () => {
       btn.addEventListener('click', async (e) => {
         const doc2 = await getTask(e.target.dataset.id);
         const post = doc2.data();
-        console.log("probando likes", post );
+        console.log("probando likes", post);
 
         const newLikes = post.likes + 1;
         console.log(newLikes);
