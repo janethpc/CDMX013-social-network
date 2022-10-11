@@ -2,7 +2,7 @@ import {
   collection, doc, addDoc, deleteDoc, onSnapshot, getDoc, updateDoc,
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 
-import {getAuth} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
+import { getAuth } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { db } from './config.js';
 
 export const savePost = async (text) => {
