@@ -26,9 +26,9 @@ El primer paso fue la elección del tema, queríamos que fuera un tema relajado 
 ____
 ## **_2. Organización_**
 
-Teniendo claro el tema y los requiriemientos del proyecto nos enfocamos en la planeación para el adecuado desarrollo de nuestro proyecto, iniciando con un tableto colaborativo de organizacion digital, en la plataforma [**_Trello_**](https://trello.com/b/kBthYiLd/mujer-fiestera).
+Teniendo claro el tema y los requiriemientos del proyecto nos enfocamos en la planeación para el adecuado desarrollo de nuestro proyecto, iniciando con un tablero colaborativo de organización digital, en la plataforma [**_Trello_**](https://trello.com/b/kBthYiLd/mujer-fiestera).
 
-Dicho tablero fue seccionado en etapas para ir trabajando progresivamente en Historias de Usuario, las cuales fueron detalladas lo más posible de acuerdo a las necesidades de nuestr@s usuari@s y definición de terminado para ayudarnos delimitar cuando ha sido suficiente trabajo en una HU y ajustarnos asi a los tiempos de entrega.
+Dicho tablero fue seccionado en etapas para ir trabajando progresivamente en Historias de Usuario, las cuales fueron detalladas lo más posible de acuerdo a las necesidades de nuestr@s usuari@s y definición de terminado para ayudarnos delimitar el trabajo en cada HU y ajustarnos así a los tiempos de entrega.
 
 <center><img src=src\Images\TRELLO.PNG></center>
 
@@ -36,14 +36,14 @@ ___
 
 ## **_3. Diseño_**
 
-La elección del nombre fue el siguiente paso a seguir, nos decidimos por **PARTY GIRLS**, pensando en lo atractivo del mismo y la facilidad para recordarlo, quedándose en la mente de nuestros miembros. El slogan **_"Best wings & drinks"_**, nos da una idea de la finalidad de esta red social, inspirando asi los primeras imagenes de los que sería la esencia de nuestra red social, los logos.
-"
+La elección del nombre fue el siguiente paso a seguir, nos decidimos por **PARTY GIRLS**, pensando en lo atractivo del mismo y la facilidad para recordarlo, quedándose en la mente de nuestros miembros. El slogan **_"Best wings & drinks"_**, nos da una idea de la finalidad de esta red social, inspirando asi los primeras imagenes de lo que sería la esencia de nuestra red social, los logos.
+
 <center><img src="src\Images\lfr.PNG"></center>
 
 
-Haciendo uso de la memoria colectiva en donde viven los letreros de luz neon, fueron seleccionados cuidasamente la paleta de colores y fuentes que transporten al usuario a una experiencia de fiesta nocturna. 
+Haciendo uso de la memoria colectiva en donde viven los letreros de luz neón, fueron seleccionados cuidasamente la paleta de colores y fuentes que transporten al usuario a una experiencia de fiesta nocturna. 
 
-Con las ideas bien definidas y siempre inclinadas a la satisfaccion de las necesidades del usuario se procede a la realización del diseño de un prototipo de alta fidelidad en la plataforma [**_FIGMA_**](https://www.figma.com/file/4G4h6C6a3X9j8LDKX16AcE/Social-Network) en el cual se piensa principalmente en que el usuario pueda tener una interacción sencilla con la interfaz final del producto. 
+Con las ideas bien definidas y siempre inclinadas hacia la satisfacción de las necesidades del usuario se realiza   el diseño de un prototipo de alta fidelidad en la plataforma [**_FIGMA_**](https://www.figma.com/file/4G4h6C6a3X9j8LDKX16AcE/Social-Network) en el cual se piensa principalmente en que el usuario pueda tener una interacción sencilla con la interfaz final del producto. 
 
 <center><img src=src\Images\Figma.PNG></center>
 
@@ -53,11 +53,11 @@ ___
 
 ## **4. App Web SPA**
 
-Uno de los objetivos del proyecto era crear una [**_Single Page Application (SPA)_**](https://es.wikipedia.org/wiki/Single-page_application#Frameworks_de_JavaScript), en la que todos recursos se cargan dinámicamente con el propósito de brindar una mejor experiencia al usuario.
+Uno de los objetivos del proyecto era crear una [**_Single Page Application (SPA)_**](https://es.wikipedia.org/wiki/Single-page_application#Frameworks_de_JavaScript), en la que todos los recursos se cargan dinámicamente con el propósito de brindar una mejor experiencia al usuario.
 
 El siguiente objetivo consistía en permitir a la usuarias, darse de alta y loguearse, teniendo la opción de realizarlo directamente en *nuestro formulario* o haciendo uso de sus cuentas de **_Google, Twitter o GitHub_**. Para lograr esto se hizo uso del [**_SDK de Firebase Authentication (Auth)_**](https://firebase.google.com/docs/auth), la cual nos permite la creación de una base de datos y el fácil acceso a la misma, logrando que nuestros usuarios puedan guardar la información de su usuario para logearse cuando ellos quieran y revisar sus recomendaciones pasadas.
 
-Otro objetivo era el conseguir que nuestros usuarios pudieran visualizar un muro, en el cual pudieran **publicar** sus recomendaciones, y no solo eso, si no tambien permitirle, dar **like** y visualizar **cuántos likes** tiene cierta publicación, **eliminar** una publicación específica, **editar** sus recomendaciones por si cambió de parecer. Para lo cual, hacemos uso de las herramientas proporcionadas por **firebase**, implementando **Cloud Firestore** a fin de poder almacenar y sincronizar los datos de los usuarios. 
+Otro objetivo era el conseguir que nuestros usuarios pudieran visualizar un muro, en el cual pudieran **publicar** sus recomendaciones, y no solo eso, si no tambien permitirle dar **like** y visualizar **cuántos likes** tiene cierta publicación, **eliminar** una publicación específica, **editar** sus recomendaciones por si cambió de parecer, Para lo cual, hacemos uso de las herramientas proporcionadas por **firebase**, implementando **Cloud Firestore** a fin de poder almacenar y sincronizar los datos de los usuarios. 
 
 <center><img src="src\Images\Post.PNG"></center>
 
