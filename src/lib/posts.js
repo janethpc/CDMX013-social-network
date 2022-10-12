@@ -2,7 +2,7 @@ import {
   collection, doc, addDoc, deleteDoc, onSnapshot, getDoc, updateDoc,
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 
-import {getAuth} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
+import { getAuth } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { db } from './config.js';
 
 export const savePost = async (text) => {
@@ -17,10 +17,10 @@ export const savePost = async (text) => {
     });
     console.log('Document written with ID: ', docRef);
     if (docRef.id !== '') {
-      console.log('se guardo');
+      console.log('Your post was saved');
     }
   } else {
-    console.error('Ojoo checa tu text! ');
+    console.error('Check your text please');
   }
 };
 

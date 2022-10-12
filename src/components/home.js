@@ -10,7 +10,8 @@ let editStatus = false;
 let id = '';
 
 export const home = () => {
-  //almacena pintado de post y eventos relacionados con las interacciones del usuario con el muro l:14, l:65;
+  // almacena pintado de post y eventos relacionados con las
+  // interacciones del usuario con el muro l:14, l:65;
   const imprimirPost = getPost((querySnapshot) => {
     console.log('pintado de posts');
     let html = '';
@@ -19,17 +20,17 @@ export const home = () => {
       html += `
       <section id="sectionPost" class="card">
       <p1>${task.email}</p1>
-      <h1>${task.texto}</h1>
-      
+      <p id=texto>${task.texto}</p>
+      </section>
       <img src='./Images/borrar.png' id='btnDelete' class='btnDelete' data-id='${doc.id}' ></img>
       <img src='./Images/editar.png' id='btnEdit' class='btnEdit' data-id='${doc.id}' ></img>
-    <img src='./Images/hearts.png' id='heart' class='heart' data-id='${doc.id}' 
-    <p id="counterLikes" class="counterLikes">${task.likes}</p> 
+      <img src='./Images/hearts.png' id='heart' class='heart' data-id='${doc.id}' >
+      <p id="counterLikes" class="counterLikes">${task.likes}</p> </img>
     
 
-    </section>
+    
     `;
-      console.log(task); //task recupera la coleción almacenada en firestore
+      console.log(task); // task recupera la coleción almacenada en firestore
     });
     tasksContainer.innerHTML = html;
     const btnsDelete = tasksContainer.querySelectorAll('.btnDelete');
@@ -56,7 +57,7 @@ export const home = () => {
       btn.addEventListener('click', async (e) => {
         const doc2 = await getTask(e.target.dataset.id);
         const post = doc2.data();
-        console.log("probando likes", post );
+        console.log('probando likes', post);
 
         const newLikes = post.likes + 1;
         console.log(newLikes);
@@ -99,7 +100,8 @@ export const home = () => {
   buttonPost.id = 'buttonPost';
   buttonPost.className = 'buttonPost';
   buttonPost.textContent = 'Post';
-  buttonPost.addEventListener('click', async () => { //asigna evento al boton para salvar el post
+  // asigna evento al boton para salvar el post
+  buttonPost.addEventListener('click', async () => {
     if (!editStatus) {
       await savePost(inputPost.value);
     } else {

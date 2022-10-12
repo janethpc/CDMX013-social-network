@@ -16,7 +16,7 @@ export const welcome = () => {
   const buttonRegister = document.createElement('button');
   buttonRegister.id = 'register';
 
-  logoInicio.src = './images/logo5.png';
+  logoInicio.src = './Images/logo5.png';
   buttonLogin.textContent = 'Log In';
   buttonRegister.textContent = 'Register';
   optionOr.textContent = 'Or';
