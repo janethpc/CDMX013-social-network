@@ -13,11 +13,11 @@ const routes = {
   '/register': register,
   '/home': home,
 };
-
+//window representa la ventada que contiene un documento
 export const onNavigate = (pathname) => {
-  window.history.pushState(
-    {},
-    pathname,
+  window.history.pushState( 
+    {}, //nueva entrada al historial 
+    pathname, //propiedad de location que contiene la ruta de la url. 
     window.location.origin + pathname,
   );
   root.removeChild(root.firstChild);

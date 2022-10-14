@@ -13,7 +13,7 @@ export const home = () => {
   // almacena pintado de post y eventos relacionados con las
   // interacciones del usuario con el muro l:14, l:65;
   const imprimirPost = getPost((querySnapshot) => {
-    console.log('pintado de posts');
+    console.log('pintado de posts'); //
     let html = '';
     querySnapshot.forEach((doc) => {
       const task = doc.data();
